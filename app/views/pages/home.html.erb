@@ -1,0 +1,17 @@
+<h1>PROJECTS</h1>
+<% @projects.each do |project| %>
+  <p><%= project.title %> - <%= project.description %></p>
+<% end %>
+
+<% if policy(Project).create? %>
+  <%= link_to 'New Project', new_project_path, target: '_blank' %>
+<% end %>
+
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+    <p>Hey Olivier Pozzo, Your Website is Awesome!</p>
+    <%= link_to 'Go to Dashboard', dashboard_path, target: '_blank' %>
+  <% end %>
+<% else %>
+  <%= link_to 'Admin', new_user_session_path %>
+<% end %>
