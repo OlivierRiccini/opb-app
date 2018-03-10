@@ -5,11 +5,27 @@ class ProjectPolicy < ApplicationPolicy
     end
   end
 
-  def index
-    true
+  def new?
+    user.admin?
   end
 
   def create?
-    true
+    user.admin?
+  end
+
+   def edit?
+    user.admin?
+  end
+
+  def update?
+    user.admin?
+  end
+
+  def destroy?
+    user.admin?
+  end
+
+  def admin_list?
+    user.admin?
   end
 end
