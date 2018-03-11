@@ -1,0 +1,5 @@
+<%= simple_form_for ([@project, @image]) do |f| %>
+  <%= f.file_field :url %>
+  <%= f.input :url_cache, as: :hidden %>
+  <%= f.button :submit %>
+<% end %>

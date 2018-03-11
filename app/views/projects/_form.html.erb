@@ -1,14 +1,9 @@
 <%= simple_form_for @project do |f| %>
   <%= f.input :title %>
   <%= f.input :type_1, collection: [ "architecutre", "urbanisme" ] %>
-  <%= f.input :type_2, collection: [ "direction_des_travaux", "conception" ] %>
+  <%= f.input :type_2, collection: [ "direction des travaux", "conception" ] %>
   <%= f.input :description %>
   <%= f.input :content %>
   <%= f.input :state, collection: [ "En cours", "Terminé" ] %>
-  <%= f.simple_fields_for :images do |i| %>
-      <%= i.input :images %>
-      <%= i.input :images_cache, as: :hidden %>
-      <% end %>
   <%= f.button :submit %>
 <% end %>
-

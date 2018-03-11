@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     @new_project = Project.new(project_params)
     authorize @new_project
     if @new_project.save
-      redirect_to dashboard_path
+      redirect_to project_path(@new_project)
     else
       render new_project_path
     end
