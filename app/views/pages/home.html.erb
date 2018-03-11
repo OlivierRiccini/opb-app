@@ -3,10 +3,6 @@
   <p><%= project.title %> - <%= project.description %></p>
 <% end %>
 
-<% if policy(Project).create? %>
-  <%= link_to 'New Project', new_project_path, target: '_blank' %>
-<% end %>
-
 <% if user_signed_in? %>
   <% if current_user.admin %>
     <p>Hey Olivier Pozzo, Your Website is Awesome!</p>

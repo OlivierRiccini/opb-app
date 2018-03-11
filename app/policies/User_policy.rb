@@ -4,12 +4,13 @@ class UserPolicy < ApplicationPolicy
       scope
     end
   end
+
+  def show?
+    admin_list?
+  end
+
   def admin_list?
     user.admin?
   end
 
-  def show?
-    # user[:admin]
-    true
-  end
 end

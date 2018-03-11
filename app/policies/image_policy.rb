@@ -1,4 +1,4 @@
-class ProjectPolicy < ApplicationPolicy
+class ImagePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope

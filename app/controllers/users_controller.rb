@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!
 
   def show
-    @projects = Project.all
-    authorize @projects
+    @user = User.where(admin: true)
+    authorize @user
+    @projects = policy_scope(Project).order(created_at: :desc)
   end
 end
 
