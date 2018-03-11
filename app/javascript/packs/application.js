@@ -8,6 +8,9 @@
 // layout file, like app/views/layouts/application.html.erb
 
 //= require cocoon
+//= require jquery
+//= require bootstrap-sprockets
+import "../components/_main_carousel";
 
 console.log('Hello World from Webpacker');
 alert('test');
