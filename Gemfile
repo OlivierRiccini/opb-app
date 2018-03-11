@@ -8,6 +8,7 @@ end
 ruby '2.4.3'
 
 gem 'bootstrap-sass'
+gem 'font-awesome-sass', '~> 5.0.6'
 gem 'simple_form'
 gem 'pundit'
 gem 'figaro'

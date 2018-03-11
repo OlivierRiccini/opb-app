@@ -1,0 +1,39 @@
+// Specific CSS for your home-page
+body {
+  height: 100vh;
+}
+
+.main-container {
+  padding: 8vw;
+  height: 100%;
+}
+
+.opb-banner {
+  display: flex;
+  align-items: baseline;
+  ul {
+    list-style: none;
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 0;
+    line-height: 1.99;
+    letter-spacing: 0.4px;
+    font-weight: lighter;
+  };
+  a {
+    color: #000;
+  }
+}
+
+.logo {
+  img {
+    width: 350px;
+  };
+  a {
+    display: block;
+    height: 100%;
+  };
+  &:hover {
+    cursor: pointer;
+  }
+}
