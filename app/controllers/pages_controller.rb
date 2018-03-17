@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    @projects = Project.all
+    @projects = Project.all.last(5)
   end
 end

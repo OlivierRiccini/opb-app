@@ -1,7 +1,23 @@
+
+<div class="banner">
+  <% @projects.each do |project| %>
+    <% project.images.each do |image| %>
+      <div class="image-project-home-container" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('<%= cl_image_path image.url %>');">
+        <a href="/"><%= image_tag 'opb', class: 'logo' %></a>
+        <h2><%= project.title %></h2>
+        <h3><%= project.description %></h3>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<!--
+
 <div class="main-container">
   <div class="opb-banner">
     <div class="logo">
-      <a href="/"><%= image_tag 'LOGO-FINAL-01' %></a>
+      <a href="/"><%= image_tag 'opb' %></a>
     </div>
     <ul>
       <li><a href="mailto:opb.architecte@gmail.com">opb.architecte@gmail.com</a></li>
@@ -11,37 +27,8 @@
   </div>
 
 
-<!-- Before action -->
-  <div id="wrapper">
-    <div id="carousel-large">
-      <% @projects.each do |project| %>
-        <% if project.images.exists? %>
-          <%= cl_image_tag project.images.first.url,  width: 795,height: 300,border: 0 %>
-        <% else %>
-          <%= image_tag 'LOGO-FINAL-01',  width: 500, height: 220, border: 0 %>
-        <% end %>
-      <% end %>
-    </div>
-    <img class="slicer" src="img/slicer-title.png" width="198" height="400" border="0" />
-    <div id="carousel-small">
-      <% @projects.each do |project| %>
-        <% if project.images.exists? %>
-          <%= cl_image_tag project.images.first.url,  width: 500, height: 220, border: 0 %>
-          <% else %>
-          <%= image_tag 'LOGO-FINAL-01',  width: 500, height: 220, border: 0 %>
-        <% end %>
-      <% end %>
-    </div>
-    <div id="carousel-title">
-      <% @projects.each do |project| %>
-        <p><%= project.title %></p>
-      <% end %>
-    </div>
-    <div id="navi"></div>
-    <img class="slicer" src="img/slicer.png" width="208" height="400" border="0" />
-  </div>
 
-</div>
+ -->
 
 
 
@@ -51,19 +38,8 @@
 
 
 
-<!--
 
-<h1>PROJECTS</h1>
-<% @projects.each do |project| %>
-  <p><%= project.title %> - <%= project.description %></p>
-<% end %>
 
-<% if user_signed_in? %>
-  <% if current_user.admin %>
-    <p>Hey Olivier Pozzo, Your Website is Awesome!</p>
-    <%= link_to 'Go to Dashboard', dashboard_path, target: '_blank' %>
-  <% end %>
-<% else %>
-  <%= link_to 'Admin', new_user_session_path %>
-<% end %>
--->
+
+
+
