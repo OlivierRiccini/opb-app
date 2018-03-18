@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    @project = Project.last
   end
 
   def home

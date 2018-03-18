@@ -2,9 +2,16 @@
   "name": "opb-app",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.0"
+    "@rails/webpacker": "^3.3.1",
+    "babel-loader": "^7.1.4",
+    "bootstrap": "3",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.3.1",
+    "turbolinks": "^5.1.1",
+    "webpack": "3"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.1.0"
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
   }
 }

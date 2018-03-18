@@ -37,18 +37,51 @@ body {
 //     cursor: pointer;
 //   }
 // }
+// .logo {
+//   width: 350px;
+// }
 
-.banner {
-  color: #fff;
-}
+// .image-project-home-container {
+//   height: 50vh;
+//   background-size: cover;
+// }
 
-.logo {
-  width: 350px;
-  color: #fff;
-}
+// .banner {
+//   color: #fff;
+//   width: 100%;
+// }
 
-.image-project-home-container {
-  height: 50vh;
-  width: 100%;
-  background-size: cover;
-}
+// rect, path {
+//   fill: none;
+//   width: 350px;
+//   stroke: red;
+//   stroke-dashoffset: 10;
+//   opacity: 10;
+//   animation: animate 3s cubic-bezier(0,0.23,1,.1);
+// }
+
+// @keyframes animate {
+//   0% {
+//     opacity: 0;
+//     fill: none;
+//     stroke-dashoffset: 1800;
+//   }
+
+//   30% {
+//     opacity: 10;
+//     fill: none;
+//     stroke-dashoffset: 1800;
+//   }
+
+//   90% {
+//     opacity: 0;
+//     fill: rgba(255,255,255,0);
+//     stroke-dashoffset: 1800;
+//   }
+
+//   100% {
+//     opacity: 10;
+//     fill: rgba(255,255,255,1);
+//     stroke-dashoffset: 0;
+//   }
+// }
