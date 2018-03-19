@@ -21,7 +21,7 @@ let interval4 = null;
 let interval5 = null;
 
 function defInterval() {
-  interval = setInterval(draw, 20);
+  interval = setInterval(draw, 30);
 }
 
 function defInterval2() {
@@ -37,7 +37,7 @@ function defInterval4() {
 }
 
 function defInterval5() {
-  interval5 = setInterval(changeLogoWidth, 18);
+  interval5 = setInterval(changeLogoWidth, 20);
 }
 
 
@@ -60,8 +60,7 @@ function fill() {
   path.forEach(function(element) {
     element.style.fill = `rgba(0,0,0,${j}`;
     if(j == 1) {
-      clearInterval(interval2);
-    }
+      clearInterval(interval2);    }
   });
 }
 
@@ -73,33 +72,42 @@ let l = rect.left;
 function changeLogoPositionTop() {
   t -= 1;
   logo.style.top = `${t}px`;
-  if(t <= 95) {
+  if(t <= 0) {
     clearInterval(interval3);
-    console.log(t);
   }
 }
 
 function changeLogoPositionLeft() {
   l -= 1;
   logo.style.left = `${l}px`;
-  if(l <= 95) {
+  if(l <= 0) {
     clearInterval(interval4);
-    console.log(l);
   }
 }
 
-let w = 500;
+
+let w = 0;
+if(window.innerWidth > 650) {
+  w = 40;
+} else {
+  w = 50;
+}
+
 function changeLogoWidth() {
-  w -= 1;
-  logo.style.width = `${w}px`
-  if(w == 350) {
+  w -= 0.1;
+  logo.style.width = `${w}vw`
+  if(window.innerWidth < 600 && w < 35) {
+    clearInterval(interval5);
+  } else if(window.innerWidth < 800 && w < 30) {
+    clearInterval(interval5);
+  } else if(window.innerWidth > 800 && w < 25) {
     clearInterval(interval5);
   }
 }
 
 
 defInterval();
-setTimeout(defInterval2, 6000);
+setTimeout(defInterval2, 8000);
 setTimeout(defInterval3, 10000);
 setTimeout(defInterval4, 10000);
 setTimeout(defInterval5, 10000);

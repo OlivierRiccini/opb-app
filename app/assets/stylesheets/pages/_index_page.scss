@@ -1,7 +1,12 @@
+body {
+  padding: 40px;
+}
+
 #logo {
   position: relative;
-  top: calc(50vh - 286.73px / 2);
-  left: calc(50vw - 500px / 2);
+  width: 40vw;
+  top: calc(50vh - 23vh / 2 - 40px);
+  left: calc(30vw - 40px);
 }
 
 path {
@@ -11,13 +16,36 @@ path {
   stroke-dashoffset: 1800 !important;
 }
 
+rect {
+  width: 0.5;
+  height: 11.3;
+}
+
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+@media screen and (max-width: 650px) {
+  body {
+    padding: 20px;
+  };
+  #logo {
+    width: 50vw;
+    top: calc(50vh - 28.8vh / 2 - 20px);
+    left: calc(25vw - 20px);
+  }
+}
 
+// @media screen and (max-width: 450px) {
+//   .wraper {
+//   padding: 10px;
+//   };
+//   #logo {
+//     text-align: center;
+//   }
+// }
 // .image-project-home-container {
 //   width: 50px;
 //   height: 50px;
