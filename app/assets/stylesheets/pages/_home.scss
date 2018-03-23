@@ -1,39 +1,87 @@
-// Specific CSS for your home-page
+// // Specific CSS for your home-page
 body {
   height: 100vh;
 }
 
-.main-container {
-  padding: 8vw;
-  height: 100%;
-}
+// .main-container {
+//   padding: 8vw;
+//   height: 100%;
+// }
 
-.opb-banner {
-  display: flex;
-  align-items: baseline;
-  ul {
-    list-style: none;
-    font-size: 14px;
-    padding: 0;
-    margin-bottom: 0;
-    line-height: 1.99;
-    letter-spacing: 0.4px;
-    font-weight: lighter;
-  };
-  a {
-    color: #000;
-  }
-}
+// .opb-banner {
+//   display: flex;
+//   align-items: baseline;
+//   ul {
+//     list-style: none;
+//     font-size: 14px;
+//     padding: 0;
+//     margin-bottom: 0;
+//     line-height: 1.99;
+//     letter-spacing: 0.4px;
+//     font-weight: lighter;
+//   };
+//   a {
+//     color: #000;
+//   }
+// }
 
-.logo {
-  img {
-    width: 350px;
-  };
-  a {
-    display: block;
-    height: 100%;
-  };
-  &:hover {
-    cursor: pointer;
-  }
-}
+// .logo {
+//   img {
+//     width: 350px;
+//   };
+//   a {
+//     display: block;
+//     height: 100%;
+//   };
+//   &:hover {
+//     cursor: pointer;
+//   }
+// }
+// .logo {
+//   width: 350px;
+// }
+
+// .image-project-home-container {
+//   height: 50vh;
+//   background-size: cover;
+// }
+
+// .banner {
+//   color: #fff;
+//   width: 100%;
+// }
+
+// rect, path {
+//   fill: none;
+//   width: 350px;
+//   stroke: red;
+//   stroke-dashoffset: 10;
+//   opacity: 10;
+//   animation: animate 3s cubic-bezier(0,0.23,1,.1);
+// }
+
+// @keyframes animate {
+//   0% {
+//     opacity: 0;
+//     fill: none;
+//     stroke-dashoffset: 1800;
+//   }
+
+//   30% {
+//     opacity: 10;
+//     fill: none;
+//     stroke-dashoffset: 1800;
+//   }
+
+//   90% {
+//     opacity: 0;
+//     fill: rgba(255,255,255,0);
+//     stroke-dashoffset: 1800;
+//   }
+
+//   100% {
+//     opacity: 10;
+//     fill: rgba(255,255,255,1);
+//     stroke-dashoffset: 0;
+//   }
+// }
