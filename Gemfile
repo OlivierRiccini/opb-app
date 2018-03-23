@@ -15,6 +15,7 @@ gem 'figaro'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem "cocoon"
+gem 'jquery-rails'
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

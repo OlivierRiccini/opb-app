@@ -1,0 +1,30 @@
+<%= render 'shared/logo_final', class: 'logo-projects-section'%>
+<div class="projects-container">
+  <div class="row">
+    <% @projects.each do |project| %>
+      <% if project.images.nil? %>
+        <div class="col-xs-12 col-sm-6 images-container">
+          <div class="image-active">
+            <p>Sorry no pictures</p>
+      <% else %>
+          <%= cl_image_tag project.images.first.url %>
+          </div>
+          <div class="images-mozaic row">
+            <% project.images.each do |image| %>
+              <div class="col-xs-6 col-sm-3">
+                <%= cl_image_tag image.url %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="title-project"><%= project.title %></h3>
+        <h6 class="description-project"><%= project.description %></h6>
+        <p class="type_1-project"><strong><%= project.type_1 %></strong></p>
+        <p class="type_2-project"><strong><%= project.type_2 %></strong></p>
+        <p class="content-project"><%= project.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
