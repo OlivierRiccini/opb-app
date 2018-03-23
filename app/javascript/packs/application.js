@@ -133,6 +133,7 @@ function animItem() {
   items[0].style.left = `${-items[0].offsetWidth + l}px`;
   if (items[0].offsetWidth - l == 0) {
     clearInterval(interval4);
+    clearInterval(interval7);
   }
 }
 
@@ -142,6 +143,7 @@ function animItem2() {
   items[1].style.left = `${-items[1].offsetWidth + l2}px`;
   if (items[1].offsetWidth - l2 == 0) {
     clearInterval(interval5);
+    clearInterval(interval8);
   }
 }
 
@@ -151,6 +153,7 @@ function animItem3() {
   items[2].style.left = `${-items[2].offsetWidth + l3}px`;
   if (items[2].offsetWidth - l3 == 0) {
     clearInterval(interval6);
+    clearInterval(interval9);
   }
 }
 
