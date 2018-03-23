@@ -16,6 +16,10 @@ rect {
   stroke-dashoffset: 1800 !important;
 }
 
+#Calque_2 {
+  fill: #000;
+}
+
 .banner-index {
   height: 100%;
   display: flex;
@@ -54,10 +58,4 @@ rect {
     visibility: hidden;
   };
 }
-
-.fa-plus-circle:hover {
-  transform: rotate(45deg);
-  .nav-label {
-    color: blue;
-  }
-}
+/////////
