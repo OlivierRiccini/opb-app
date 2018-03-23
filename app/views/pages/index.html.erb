@@ -1,7 +1,12 @@
-<div class="wraper">
-  <%= render 'shared/logo_final' %>
-  <div class="banner">
-      <div class="image-project-home-container" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('<%= cl_image_path @project.images.first.url %>');">
-      </div>
+<div class="banner-index">
+  <div class="info-opb-left">
+    <%= render 'shared/logo_final' %>
+  </div>
+  <div class="info-opb-right">
+    <ul>
+      <li><a href="#"><i class="fas fa-plus-circle"></i></a> <div class="nav-item"><span class="nav-label"> L'agence</span></div></li>
+      <li><a href="#"><i class="fas fa-plus-circle"></i></a> <div class="nav-item"><span class="nav-label"> Les projets</span></div></li>
+      <li><a href="#"><i class="fas fa-plus-circle"></i></a> <div class="nav-item"><span class="nav-label"> Contact</span></div></li>
+    </ul>
   </div>
 </div>
