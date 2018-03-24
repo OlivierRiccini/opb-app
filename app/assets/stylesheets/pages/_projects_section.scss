@@ -1,6 +1,16 @@
 .projects-section {
   position: relative;
   height: 100vh;
+  width: 100vw;
+  display: inline-flex;
+  // overflow: auto;
+}
+
+
+.projects-container {
+  width: 100vw;
+  position: absolute;
+  left: 100vw;
 }
 
 .title-project {
@@ -11,27 +21,26 @@
   font-size: 16px;
 }
 
-#logo-projects-page {
-  position: fixed;
-  top: 15px;
-  left: 25px;
-  width: 200px;
+.logo-projects-section {
+  position: absolute;
+  top: 0;
 }
 
 .projects-container {
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
 }
 
 .project-presentation {
   padding: 0 140px;
+  background-color: #f4f4f4;
 }
 
 .image-active {
   height: 275px;
   text-align: center;
-  background-color: rgba(200,200,200,0.1);
   img {
     max-height: -webkit-fill-available;
   }

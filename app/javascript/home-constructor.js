@@ -237,33 +237,6 @@ setTimeout(function() { defIntervalSpin2(180, 1); }, 11500);
 setTimeout(function() { defIntervalSpin3(180, 1); }, 13000);
 /////////////////////////////////////////////////////////////////
 
-/* Arrow pulse */
-const arrow = document.querySelectorAll('.arrow');
-
-let intervalArrow = null;
-
-function defIntervalArrow() {
-  intervalArrow = setInterval(arrwoAnimation, 50);
-}
-
-let arrow1Index = 5;
-let arrowColorIndex = 0;
-
-function arrwoAnimation() {
-  arrow1Index += 1;
-  arrowColorIndex += 0.05;
-  arrow[0].style.top = `${arrow1Index}px`;
-  arrow[0].style.borderColor = `rgba(0,0,0,${arrowColorIndex})`;
-  if (arrowColorIndex >= 1) {
-    arrowColorIndex = 0;
-  }
-  if (arrow1Index >= 20) {
-    arrow1Index = 5;
-  }
-}
-
-defIntervalArrow();
-
 /* Hover effect on plus signs*/
 plusSigns[0].addEventListener('mouseover', function() { defIntervalSpin1(90, 1); });
 plusSigns[0].addEventListener('mouseleave', function() { defIntervalSpin1(-90, -1); });

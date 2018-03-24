@@ -1,7 +1,8 @@
 <div class="projects-section">
-  <%= render 'shared/logo_final_projects_page', class: 'logo-projects-section'%>
+  <%= render 'shared/arrow_left' %>
   <% @projects.each do |project| %>
     <div class="projects-container">
+    <%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-projects-section') %>
       <div class="row project-presentation">
           <% if project.images.nil? %>
             <div class="col-xs-12 col-sm-6 images-container">
@@ -30,5 +31,7 @@
           </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+  <%= render 'shared/arrow_right' %>
+  <%= render 'shared/arrow_up' %>
+</div>

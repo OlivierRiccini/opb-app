@@ -37,6 +37,7 @@ rect {
   top: 10px;
   right: 10px;
   font-weight: lighter;
+  z-index: 999;
   a {
     color: #000;
     text-decoration: none;
@@ -60,41 +61,4 @@ rect {
   i {
     visibility: hidden;
   };
-}
-////////////////////
-.arrow-circle {
-  position: absolute;
-  left: calc(50% - 30px);
-  bottom: 30px;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #000;
-  border-radius: 50%;
-  transition: all 0.2s;
-  &:hover {
-    cursor: pointer;
-    bottom: 20px;
-  }
-}
-
-.arrow-down {
-  width: 25px;
-  height: 25px;
-  border-right: 2px solid rgba(0,0,0,1);
-  border-bottom: 2px solid rgba(0,0,0,1);
-  transform: rotate(45deg);
-  margin: 0 auto;
-  // transition: all 0.2s;
-}
-
-.arrow-down-animated {
-  width: 17px;
-  height: 17px;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
-  transform: rotate(45deg) !important;
-  margin: 0 auto;
-  position: relative;
-  top: 15px;
-  transition: all 0.2s;
 }
