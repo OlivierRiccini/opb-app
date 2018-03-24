@@ -1,6 +1,6 @@
 /* Arrow down */
 .arrow-down-circle {
-  position: absolute;
+  position: fixed;
   left: calc(50% - 30px);
   bottom: 30px;
   width: 60px;
@@ -74,7 +74,7 @@
 .arrow-left-circle {
   display: flex;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: calc(50% - 30px);
   left: 20px;
   width: 40px;
@@ -113,7 +113,7 @@
 .arrow-right-circle {
   display: flex;
   align-items: center;
-  position: absolute;
+  position: fixed;
   right: 20px;
   top: calc(50% - 30px);
   width: 40px;

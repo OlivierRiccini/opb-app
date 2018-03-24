@@ -17,3 +17,4 @@ console.log('Hello World from Webpacker')
 import 'home-constructor'
 import 'shared/arrows-up-and-down'
 import 'slider-projects'
+import 'scroll-effects'

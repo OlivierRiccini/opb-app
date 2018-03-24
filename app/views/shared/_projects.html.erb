@@ -1,5 +1,4 @@
 <div class="projects-section">
-  <%= render 'shared/arrow_left' %>
   <% @projects.each do |project| %>
     <div class="projects-container">
     <%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-projects-section') %>
@@ -32,6 +31,4 @@
       </div>
     </div>
   <% end %>
-  <%= render 'shared/arrow_right' %>
-  <%= render 'shared/arrow_up' %>
 </div>
