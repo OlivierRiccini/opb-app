@@ -1,3 +1,49 @@
-.logo-projects-section {
+.projects-section {
+  position: relative;
+  height: 100vh;
+}
+
+.title-project {
+  margin-top: 0;
+}
+
+.content-project {
+  font-size: 16px;
+}
+
+#logo-projects-page {
+  position: fixed;
+  top: 15px;
+  left: 25px;
   width: 200px;
+}
+
+.projects-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.project-presentation {
+  padding: 0 140px;
+}
+
+.image-active {
+  height: 275px;
+  text-align: center;
+  background-color: rgba(200,200,200,0.1);
+  img {
+    max-height: -webkit-fill-available;
+  }
+}
+
+.images-mozaic {
+  padding: 20px 15px;
+  img {
+    height: 100px;
+  }
+}
+
+.image-mozaic-box {
+  padding: 0;
 }
