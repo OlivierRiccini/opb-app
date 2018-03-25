@@ -1,43 +1,42 @@
-$(document).ready(function(){
-  $('.arrow-down-circle').click(function(){
-    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "slow"); return false;
-  });
-});
-
-
-$(document).ready(function(){
-  $('.arrow-up-circle').click(function(){
-    $('html, body').animate({scrollTop : 0},800);
-    return false;
-  });
-});
+function srollDown(index) {
+  $("html, body").animate({ scrollTop: $(window).height() * index }, "slow"); return false;
+}
 
 /* Arrow pulse bottom */
-const arrowDown = document.querySelectorAll('.arrow-down');
+const arrowDownCircle = document.querySelectorAll('.arrow-down-circle');
 
-let intervalArrowDown = null;
+function globalArrowDownAnimation() {
+  arrowDownCircle.forEach(function(arrow) {
+    const arrowDown = arrow.querySelectorAll('.arrow-down');
+    let intervalArrowDown = null;
 
-function defIntervalArrowDown() {
-  intervalArrowDown = setInterval(arrwoDownAnimation, 50);
+    function defIntervalArrowDown() {
+      intervalArrowDown = setInterval(arrwoDownAnimation, 50);
+    }
+
+    let arrowDownIndex = 5;
+    let arrowDownColorIndex = 0;
+
+    function arrwoDownAnimation() {
+      arrowDownIndex += 1;
+      arrowDownColorIndex += 0.05;
+      arrowDown[0].style.top = `${arrowDownIndex}px`;
+      arrowDown[0].style.borderColor = `rgba(0,0,0,${arrowDownColorIndex})`;
+      if (arrowDownColorIndex >= 1) {
+        arrowDownColorIndex = 0;
+      }
+      if (arrowDownIndex >= 20) {
+        arrowDownIndex = 5;
+      }
+    }
+
+    arrow.addEventListener("click", function(){srollDown(arrow.dataset.arrowDown)});
+
+  defIntervalArrowDown();
+
+  });
 }
-
-let arrowDownIndex = 5;
-let arrowDownColorIndex = 0;
-
-function arrwoDownAnimation() {
-  arrowDownIndex += 1;
-  arrowDownColorIndex += 0.05;
-  arrowDown[0].style.top = `${arrowDownIndex}px`;
-  arrowDown[0].style.borderColor = `rgba(0,0,0,${arrowDownColorIndex})`;
-  if (arrowDownColorIndex >= 1) {
-    arrowDownColorIndex = 0;
-  }
-  if (arrowDownIndex >= 20) {
-    arrowDownIndex = 5;
-  }
-}
-
-defIntervalArrowDown();
+globalArrowDownAnimation();
 
 
 /* Arrow pulse up */

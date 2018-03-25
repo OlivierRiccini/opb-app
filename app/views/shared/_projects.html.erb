@@ -1,4 +1,5 @@
 <div class="projects-section">
+  <% i = 1 %>
   <% @projects.each do |project| %>
     <div class="projects-container">
     <%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-projects-section') %>
@@ -28,6 +29,12 @@
             <p class="type_1-project"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
             <p class="content-project"><%= project.content %></p>
           </div>
+        </div>
+        <% i += 1 %>
+        <div class="arrow-down-circle" data-arrow-down="<%= i %>">
+          <div class="arrow-down arrow-down-animated"></div>
+          <div class="arrow-down arrow-down"></div>
+        </div>
       </div>
     </div>
   <% end %>
