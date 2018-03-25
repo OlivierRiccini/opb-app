@@ -30,6 +30,7 @@ function globalArrowDownAnimation() {
       }
     }
 
+    /* calling scroll down function using index defining scrolling height */
     arrow.addEventListener("click", function(){srollDown(arrow.dataset.arrowDown)});
 
   defIntervalArrowDown();
