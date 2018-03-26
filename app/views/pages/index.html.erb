@@ -4,11 +4,13 @@
   </div>
   <div class="info-opb-right">
     <ul>
-      <li><a href="#"><i class="fas fa-plus-circle"></i></a> <div class="nav-item"><span class="nav-label"> L'agence</span></div></li>
-      <li><a href="#"><i class="fas fa-plus-circle"></i></a> <div class="nav-item"><span class="nav-label"> Les projets</span></div></li>
-      <li><a href="#"><i class="fas fa-plus-circle"></i></a> <div class="nav-item"><span class="nav-label"> Contact</span></div></li>
+      <li><i class="fas fa-plus-circle" id="agence-nav"></i> <div class="nav-item"><span class="nav-label"> L'agence</span></div></li>
+      <li><i class="fas fa-plus-circle" id="projets-nav"></i> <div class="nav-item"><span class="nav-label"> Les projets</span></div></li>
+      <li><i class="fas fa-plus-circle" id="contact-nav"></i> <div class="nav-item"><span class="nav-label"> Contact</span></div></li>
     </ul>
   </div>
   <%= render 'shared/arrow_down' %>
 </div>
 <%= render 'shared/projects' %>
+<%= render 'shared/list_projects' %>
+<%= render 'shared/agency_page' %>
