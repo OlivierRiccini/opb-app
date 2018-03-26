@@ -1,24 +1,24 @@
-.container-list-projects {
+.container-agency {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f4f4f4;
   opacity: 0;
-  ul {
-    padding-left: 0;
-    list-style: none;
-    text-align: center;
-    font-weight: lighter;
-  }
+  font-weight: lighter;
 }
 
-.logo-list-projects {
+
+.logo-agency-page {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.agency-intro {
+  width: 50%;
 }

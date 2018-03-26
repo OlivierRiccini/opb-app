@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def index
     @projects = Project.all
+    @agency = Agency.first
   end
 
   def home

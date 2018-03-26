@@ -44,8 +44,8 @@ contactButton.addEventListener('click', function(){defFadeOutInterval(contactPag
 
 let fadeInInterval = null;
 
-function defFadeInInterval() {
-  fadeInInterval = setInterval(fadeIn, 50);
+function defFadeInInterval(page) {
+  fadeInInterval = setInterval(function(){fadeIn(page)}, 50);
   fadeInIndex2 = 1;
   fadeOutIndex2 = 0;
 }
@@ -53,12 +53,12 @@ function defFadeInInterval() {
 let fadeInIndex2 = 1;
 let fadeOutIndex2 = 0;
 
-function fadeIn() {
+function fadeIn(page) {
   fadeInIndex2 -= 0.05;
   fadeOutIndex2 += 0.05;
-  listProjects.style.opacity = fadeInIndex2;
+  page.style.opacity = fadeInIndex2;
   listNav.style.opacity = fadeOutIndex2;
-  listProjects.style.zIndex = 0;
+  page.style.zIndex = 0;
   circleArrow.forEach(function(arrow){
     arrow.style.opacity = fadeOutIndex2;
   });
@@ -67,6 +67,10 @@ function fadeIn() {
   }
 }
 
-const closingCross = document.querySelector('.close-button');
-closingCross.addEventListener('click', defFadeInInterval);
+const closingCrossAgency = document.getElementById('closing-cross-agency');
+const closingCrossProjectList = document.getElementById('closing-cross-list-projects');
+const closingCrossContact = document.getElementById('closing-cross-contact');
 
+closingCrossAgency.addEventListener('click', function(){defFadeInInterval(agencyPage)});
+closingCrossProjectList.addEventListener('click', function(){defFadeInInterval(listProjects)});
+closingCrossContact.addEventListener('click', function(){defFadeInInterval(contactPage)});
