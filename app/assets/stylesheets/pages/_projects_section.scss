@@ -1,0 +1,68 @@
+.projects-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.projects-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title-project {
+  margin-top: 0;
+}
+
+.content-project {
+  font-size: 16px;
+}
+
+.logo-projects-section {
+  position: fixed;
+  top: 0;
+}
+
+.project-presentation {
+  padding: 0 140px;
+}
+
+.image-active {
+  height: 275px;
+  text-align: center;
+  img {
+    max-height: -webkit-fill-available;
+  }
+}
+
+.images-mozaic {
+  padding: 20px 15px;
+  img {
+    height: 100px;
+  }
+}
+
+.image-mozaic-box {
+  padding: 0;
+}
+
+
+// ANIMATIONS
+
+.text-animate  {
+  animation-duration: 0.8s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}

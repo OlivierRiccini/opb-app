@@ -1,0 +1,9 @@
+<div class="container-list-projects">
+  <%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-list-projects') %>
+  <ul>
+    <span class="close-button" id="closing-cross-list-projects"></span>
+    <% @projects.each do |project| %>
+      <li><%= project.title %></li>
+    <% end %>
+  </ul>
+</div>

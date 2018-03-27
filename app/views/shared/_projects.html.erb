@@ -1,0 +1,40 @@
+<div class="projects-section">
+  <% i = 1 %>
+  <% @projects.each do |project| %>
+    <div class="projects-container">
+      <div class="row project-presentation">
+          <% if project.images.nil? %>
+            <div class="col-xs-12 col-sm-6 images-container">
+              <div class="image-active">
+                <p>Sorry no pictures</p>
+              </div>
+          <% else %>
+              <div class="col-xs-12 col-sm-6 images-container">
+              <div class="image-active">
+              <%= cl_image_tag project.images.first.url %>
+              </div>
+              <div class="images-mozaic row">
+                <% project.images.each do |image| %>
+                  <div class="col-xs-6 col-sm-3 image-mozaic-box">
+                    <%= cl_image_tag image.url %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <div class="col-xs-12 col-sm-6">
+            <h3 class="title-project text-animate"><%= project.title %></h3>
+            <h5 class="description-project text-animate"><%= project.description %></h5>
+            <p class="type_1-project text-animate"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
+            <p class="content-project text-animate"><%= project.content %></p>
+          </div>
+        </div>
+        <% i += 1 %>
+        <div class="arrow-down-circle" data-arrow-down="<%= i %>">
+          <div class="arrow-down arrow-down-animated"></div>
+          <div class="arrow-down arrow-down"></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
