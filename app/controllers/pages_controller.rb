@@ -5,8 +5,4 @@ class PagesController < ApplicationController
     @projects = Project.all
     @agency = Agency.first
   end
-
-  def home
-    @projects = Project.all.last(5)
-  end
 end

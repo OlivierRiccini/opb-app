@@ -14,6 +14,4 @@
 
 console.log('Hello World from Webpacker')
 
-import 'home-constructor'
 import 'shared/arrows-up-and-down'
-import 'list-projects'

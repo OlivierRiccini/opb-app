@@ -1,0 +1,28 @@
+.action-btn {
+  padding: 15px 30px;
+  border-radius: 3px;
+  transition: all 0.5s;
+  color: #fff;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.green-btn {
+  background-color: green;
+  &:hover {
+    background-color: transparent;
+    color: green;
+    text-decoration: none;
+  };
+}
+
+.red-btn {
+  background-color: red;
+  &:hover {
+    background-color: transparent;
+    color: red;
+    text-decoration: none;
+  };
+}

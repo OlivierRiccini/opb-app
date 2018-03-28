@@ -1,1 +1,10 @@
-<%= render 'images_form' %>
+<div class="new-image-container">
+  <%= simple_form_for ([@project, @image]) do |f| %>
+    <%= f.file_field :url %>
+    <%= f.input :url_cache, as: :hidden %>
+    <%= f.button :submit, class: 'action-btn green-btn' %>
+  <% end %>
+  <%= link_to project_path(@project) do %>
+    Back to <strong><%= @project.title %></strong> view
+  <% end %>
+</div>

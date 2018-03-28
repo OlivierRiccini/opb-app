@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
     authorize @project
     @project.update(project_params)
 
-    redirect_to dashboard_path
+    redirect_to project_path(@project)
   end
 
   def destroy
