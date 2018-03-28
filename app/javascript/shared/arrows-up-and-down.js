@@ -41,28 +41,19 @@ globalArrowDownAnimation();
 
 
 /* Arrow pulse up */
-const arrowUp = document.querySelectorAll('.arrow-up');
+$(document).ready(function(){
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 400) {
+      $('.arrow-up-circle').fadeIn();
+    } else {
+      $('.arrow-up-circle').fadeOut();
+    }
+  });
+  //Click event to scroll to top
+  $('.arrow-up-circle').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
 
-let intervalArrowUp = null;
-
-function defIntervalArrowUp() {
-  intervalArrowUp = setInterval(arrwoUpAnimation, 50);
-}
-
-let arrowUpIndex = 5;
-let arrowUpColorIndex = 0;
-
-function arrwoUpAnimation() {
-  arrowUpIndex += 1;
-  arrowUpColorIndex += 0.05;
-  arrowUp[0].style.bottom = `${arrowUpIndex}px`;
-  arrowUp[0].style.borderColor = `rgba(0,0,0,${arrowUpColorIndex})`;
-  if (arrowUpColorIndex >= 1) {
-    arrowUpColorIndex = 0;
-  }
-  if (arrowUpIndex >= 20) {
-    arrowUpIndex = 5;
-  }
-}
-
-// defIntervalArrowUp();
+});
