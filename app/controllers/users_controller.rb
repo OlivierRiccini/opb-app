@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.where(admin: true)
     authorize @user
     @projects = policy_scope(Project).order(created_at: :desc)
+    @agency = Agency.first
   end
 end
 
