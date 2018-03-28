@@ -3,7 +3,7 @@
   <% @projects.each do |project| %>
     <div class="projects-container">
       <div class="row project-presentation">
-          <% if project.images.nil? %>
+          <% if project.images.exists? %>
             <div class="col-xs-12 col-sm-6 images-container">
               <div class="image-active">
                 <p>Sorry no pictures</p>
