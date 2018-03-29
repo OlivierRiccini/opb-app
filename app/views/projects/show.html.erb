@@ -12,7 +12,7 @@
 <div class="projects-section">
   <div class="projects-container">
     <div class="row project-presentation">
-      <% if @project.images.nil? %>
+      <% if @project.images.first.nil? %>
         <div class="col-xs-12 col-sm-6 images-container">
           <div class="image-active">
             <p>Sorry no pictures</p>
@@ -27,6 +27,10 @@
             <% @project.images.each do |image| %>
               <div class="col-xs-6 col-sm-3 image-mozaic-box">
                 <%= cl_image_tag image.url %>
+                <br>
+                <% if policy(image).destroy? %>
+                  <%= link_to "Delete image", project_image_path(image), :method => :delete, :data => {:confirm => "Are you sure Mr Oli Pozzo?"} %>
+                <% end %>
               </div>
             <% end %>
           </div>
