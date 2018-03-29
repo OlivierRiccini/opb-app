@@ -1,6 +1,6 @@
 /* Drawing Logo */
 const path = document.querySelectorAll('path');
-const rect = document.querySelectorAll('rect');
+// const rect = document.querySelectorAll('rect');
 const logo = document.getElementById('logo');
 
 let intervalDraw = null;
@@ -14,12 +14,12 @@ function draw() {
       clearInterval(intervalDraw);
     }
   });
-  rect.forEach(function(element) {
-    element.style.strokeDasharray = `${i}`;
-    if(i >= 3000) {
-      clearInterval(intervalDraw);
-    }
-  });
+  // rect.forEach(function(element) {
+  //   element.style.strokeDasharray = `${i}`;
+  //   if(i >= 3000) {
+  //     clearInterval(intervalDraw);
+  //   }
+  // });
 }
 
 function defIntervalDraw() {
@@ -41,12 +41,12 @@ function fill() {
       clearInterval(intervalFill);
     }
   });
-  rect.forEach(function(element) {
-    element.style.fill = `rgba(0,0,0,${j})`;
-    if(j >= 1) {
-      clearInterval(intervalFill);
-    }
-  });
+  // rect.forEach(function(element) {
+  //   element.style.fill = `rgba(0,0,0,${j})`;
+  //   if(j >= 1) {
+  //     clearInterval(intervalFill);
+  //   }
+  // });
 }
 
 function defIntervalFill() {
@@ -68,12 +68,12 @@ function inverseDraw() {
       clearInterval(intervalInverseDraw);
     }
   });
-  rect.forEach(function(element) {
-    element.style.strokeDasharray = `${i2}`;
-    if(i2 <= 1500) {
-      clearInterval(intervalInverseDraw);
-    }
-  });
+  // rect.forEach(function(element) {
+  //   element.style.strokeDasharray = `${i2}`;
+  //   if(i2 <= 1500) {
+  //     clearInterval(intervalInverseDraw);
+  //   }
+  // });
 }
 
 function defIntervalInverseDraw() {

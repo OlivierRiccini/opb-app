@@ -87,3 +87,5 @@ Agency.create(text: "Lorem Ipsum is simply dummy text of the printing and typese
               address: "Biguglia 20620, Lot arbucetta, Lieu dit Ceppe",
               email: "opb.architecte@gmail.com",
               phone: "04 95 48 47 22")
+
+User.create(email: "opb.architecte@gmail.com", password: "123456", admin: true)
