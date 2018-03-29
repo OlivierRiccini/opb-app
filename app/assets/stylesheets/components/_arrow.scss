@@ -1,10 +1,17 @@
 /* Arrow down */
-.arrow-down-circle {
+.arrow-navigation {
   position: absolute;
-  left: calc(50% - 30px);
-  bottom: 30px;
+  bottom: 0;
+  display: flex;
+  left: calc(50% - 80px);
+}
+
+.arrow-down-circle {
+  position: relative;
+  bottom: 15px;
   width: 60px;
   height: 60px;
+  margin: 10px;
   border: 2px solid #000;
   border-radius: 50%;
   transition: all 0.2s;
@@ -38,15 +45,16 @@
 
 /* Arrow up */
 .arrow-up-circle {
-  position: fixed;
-  left: 10px;
-  bottom: 30px;
+  position: relative;
+  bottom: 15px;
   width: 60px;
   height: 60px;
+  margin: 10px;
   border: 2px solid #000;
   border-radius: 50%;
   transition: all 0.2s;
   z-index: 9;
+  transform: rotate(180deg);
   &:hover {
     cursor: pointer;
     bottom: 20px;
@@ -58,7 +66,8 @@
   height: 25px;
   border-right: 2px solid rgba(0,0,0,1);
   border-bottom: 2px solid rgba(0,0,0,1);
-  transform: rotate(225deg);
+  transform: rotate(45deg);
+  margin: 0 auto;
 }
 
 .arrow-up-animated {
@@ -66,9 +75,10 @@
   height: 17px;
   border-right: 1px solid #000;
   border-bottom: 1px solid #000;
-  transform: rotate(225deg) !important;
+  transform: rotate(45deg) !important;
   margin: 0 auto;
   position: relative;
+  top: 15px;
   transition: all 0.2s;
 }
 

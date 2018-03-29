@@ -48,21 +48,3 @@
 .image-mozaic-box {
   padding: 0;
 }
-
-
-// ANIMATIONS
-
-.text-animate  {
-  animation-duration: 0.8s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-  }
-
-  to {
-    margin-left: 0%;
-  }
-}

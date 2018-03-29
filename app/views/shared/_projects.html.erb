@@ -30,12 +30,17 @@
           </div>
         </div>
         <% i += 1 %>
-        <div class="arrow-down-circle" data-arrow-down="<%= i %>">
-          <div class="arrow-down arrow-down-animated"></div>
-          <div class="arrow-down arrow-down"></div>
+        <div class="arrow-navigation">
+          <div class="arrow-up-circle" data-arrow-up="<%= i %>">
+            <div class="arrow-up arrow-up-animated"></div>
+            <div class="arrow-up arrow-up"></div>
+          </div>
+          <div class="arrow-down-circle" data-arrow-down="<%= i %>">
+            <div class="arrow-down arrow-down-animated"></div>
+            <div class="arrow-down arrow-down"></div>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-<%= render 'shared/arrow_up' %>
