@@ -8,6 +8,7 @@ function srollUp(index) {
 
 /* Arrow pulse bottom */
 const arrowDownCircle = document.querySelectorAll('.arrow-down-circle');
+const nbProjects = document.querySelectorAll('.projects-container').length;
 
 function globalArrowDownAnimation() {
   arrowDownCircle.forEach(function(arrow) {
@@ -36,6 +37,10 @@ function globalArrowDownAnimation() {
 
     /* calling scroll down function using index defining scrolling height */
     arrow.addEventListener("click", function(){srollDown(arrow.dataset.arrowDown)});
+
+    if (arrow.dataset.arrowDown == nbProjects + 1) {
+      arrow.style.display = 'none';
+    }
 
   defIntervalArrowDown();
 
@@ -82,19 +87,21 @@ function globalArrowUpAnimation() {
 globalArrowUpAnimation();
 
 
-// $(document).ready(function(){
-//   //Check to see if the window is top if not then display button
-//   $(window).scroll(function(){
-//     if ($(this).scrollTop() > 400) {
-//       $('.arrow-up-circle').fadeIn();
-//     } else {
-//       $('.arrow-up-circle').fadeOut();
-//     }
-//   });
-//   //Click event to scroll to top
-//   $('.arrow-up-circle').click(function(){
-//     $('html, body').animate({scrollTop : 0},800);
-//     return false;
-//   });
+/* Arrow to top 0 */
 
-// });
+$(document).ready(function(){
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 400) {
+      $('.arrow-top-0').fadeIn();
+    } else {
+      $('.arrow-top-0').fadeOut();
+    }
+  });
+  //Click event to scroll to top
+  $('.arrow-top-0').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
+
+});
