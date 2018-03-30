@@ -5,27 +5,31 @@ class ProjectPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def new?
-    user.admin?
+    admin_list?
   end
 
   def create?
-    user.admin?
+    admin_list?
   end
 
    def edit?
-    user.admin?
+    admin_list?
   end
 
   def update?
-    user.admin?
+    admin_list?
   end
 
   def destroy?
-    user.admin?
+    admin_list?
   end
 
   def admin_list?
-    user.admin?
+    !user.nil? && user.admin
   end
 end

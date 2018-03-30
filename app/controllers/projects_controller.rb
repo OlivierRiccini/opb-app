@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  # skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [ :show ]
   before_action :find_project, only: [ :show, :edit, :update, :destroy ]
 
   def show

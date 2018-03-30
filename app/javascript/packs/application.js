@@ -15,3 +15,10 @@
 console.log('Hello World from Webpacker')
 
 import 'shared/arrows-up-and-down'
+
+import AOS from 'aos'
+
+AOS.init({
+  duration: 1200,
+  easing: 'ease-in-out-back'
+});

@@ -1,12 +1,18 @@
+<a href="/" class="close-button"></a>
+<%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-list-projects') %>
 <div class="buttons">
   <% if policy(@project).edit? %>
     <%= link_to "Edit", edit_project_path(@project), class: 'action-btn green-btn' %>
   <% end %>
-  <%= link_to 'Add Image', new_project_image_path(@project), class: 'action-btn green-btn' %>
+  <% if policy(Image).new? %>
+    <%= link_to 'Add Image', new_project_image_path(@project), class: 'action-btn green-btn' %>
+  <% end %>
   <% if policy(@project).destroy? %>
     <%= link_to "Delete", project_path(@project), :method => :delete, :data => {:confirm => "Are you sure Mr Oli Pozzo?"}, class: 'action-btn red-btn' %>
   <% end %>
-  <%= link_to 'Back to dashboard', dashboard_path %>
+  <% if policy(User).show? %>
+    <%= link_to 'Back to dashboard', dashboard_path %>
+  <% end %>
   </div>
 </div>
 <div class="projects-section">
@@ -19,7 +25,7 @@
           </div>
         </div>
       <% else %>
-        <div class="col-xs-12 col-sm-6 images-container">
+        <div class="col-xs-12 col-sm-6 images-container" data-aos="fade-up-right" data-aos-delay="200">
           <div class="image-active">
             <%= cl_image_tag @project.images.first.url %>
           </div>
@@ -36,7 +42,7 @@
           </div>
         </div>
       <% end %>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6" data-aos="fade-up-left" data-aos-delay="200">
         <h3 class="title-project text-animate"><%= @project.title %></h3>
         <h5 class="description-project text-animate"><%= @project.description %></h5>
         <p class="type_1-project text-animate"><strong><%= @project.type_1 %> - <%= @project.type_2 %></strong></p>
