@@ -10,7 +10,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def admin_list?
-    user.admin?
+    !user.nil? && user.admin
   end
 
 end
