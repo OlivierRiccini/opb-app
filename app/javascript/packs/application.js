@@ -18,4 +18,7 @@ import 'shared/arrows-up-and-down'
 
 import AOS from 'aos'
 
-AOS.init();
+AOS.init({
+  duration: 1200,
+  easing: 'ease-in-out-back'
+});
