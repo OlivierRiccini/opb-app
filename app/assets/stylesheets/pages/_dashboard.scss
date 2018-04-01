@@ -3,11 +3,20 @@
   padding: 30px;
 }
 
-.dashboard-container-project, .dashboard-container-agency {
+.dashboard-container-project, .dashboard-container-agency, .dashboard-container-message {
   padding: 30px;
   h2 {
     margin-bottom: 50px;
   }
+}
+
+.dashboard-container-message {
+  height: 500px;
+  overflow: scroll;
+}
+
+.messages-box-intro {
+  margin-left: 20px;
 }
 
 .dashboard-projects {
@@ -23,17 +32,25 @@
   justify-content: space-around;
 }
 
+.dashboard-messages {
+  margin-bottom: 15px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(100,100,100,0.5);
+}
+
 @media screen and (max-width: 800px) {
-  .dashboard-container-project {
+  .dashboard-container-project, .dashboard-container-message  {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .dashboard-container-project {
+  .dashboard-container-project, .dashboard-container-message  {
     font-size: 10px;
   };
-  .dashboard-projects {
+  .dashboard-projects, .dashboard-messages {
   min-height: 40px;
   }
 }

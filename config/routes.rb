@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :images
   end
   resources :agencies, only: [ :edit, :update, :destroy ]
+  resources :messages
 end

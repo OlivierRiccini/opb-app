@@ -1,0 +1,8 @@
+<div class="container-message">
+  <%= simple_form_for @new_message, remote: true do |f| %>
+    <%= f.input :from_email_address, label: 'Adresse email' %><%= f.input :from_tel, label: 'Télephone' %>
+    <%= f.input :subject, label: 'Object' %>
+    <%= f.input :message %>
+    <%= f.button :submit, value: 'Envoyer' %>
+  <% end %>
+</div>
