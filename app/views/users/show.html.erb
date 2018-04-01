@@ -1,4 +1,4 @@
-<h1>Oli Pozzo DashBoard</h1>
+<h1 class="text-center">Oli Pozzo DashBoard</h1>
   <h3 class="messages-box-intro">Salut Olivier, tu as <strong><%= @messages.count %></strong> dont <strong><%= @messages.where(state: false).count %></strong>  que tu n'as pas encore lu!</h3>
   <div class="dashboard-container-message">
     <% @messages.each do |message| %>

@@ -3,7 +3,7 @@
   <ul>
     <span class="close-button" id="closing-cross-list-projects"></span>
     <% @projects.each do |project| %>
-      <li><%= link_to project.title, project_path(project) %></li>
+      <li><%= link_to project.title, project_path(project), target: '_blank' %></li>
     <% end %>
   </ul>
 </div>
