@@ -1,0 +1,11 @@
+<div class="container">
+  <p><strong>Date: </strong><%= @message.created_at.strftime("%B %d, %Y, %H:%M:") %></p>
+  <p><strong>Subject: </strong><%= @message.subject %></p>
+  <p><strong>Message: </strong><%= @message.message %></p>
+  <% if policy(@message).destroy? %>
+    <%= link_to message_path(@message), :method => :delete, :data => {:confirm => "Are you sure to delete this message Mr Oli Pozzo?"} do %>
+      <i class="far fa-trash-alt"></i> Delete
+    <% end %>
+  <% end %>
+  <%= link_to 'Back to dashboard', dashboard_path %>
+</div>
