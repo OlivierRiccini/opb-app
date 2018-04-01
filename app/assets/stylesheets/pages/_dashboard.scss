@@ -10,7 +10,16 @@
   }
 }
 
-.dashboard-projects, .dashboard-messages {
+.dashboard-container-message {
+  height: 500px;
+  overflow: scroll;
+}
+
+.messages-box-intro {
+  margin-left: 20px;
+}
+
+.dashboard-projects {
   margin-bottom: 15px;
   min-height: 70px;
   display: flex;
@@ -21,6 +30,14 @@
 .action-column {
   display: flex;
   justify-content: space-around;
+}
+
+.dashboard-messages {
+  margin-bottom: 15px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(100,100,100,0.5);
 }
 
 @media screen and (max-width: 800px) {

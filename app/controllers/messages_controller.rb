@@ -4,15 +4,28 @@ class MessagesController < ApplicationController
 
   def show
     authorize @message
+    @message.update(state: true)
+  end
+
+  def new
+    @new_message = Message.new
+    authorize @new_message
   end
 
   def create
-    @message = Message.new(message_params)
-    authorize @message
-    if @message.save
-      redirect_to root_path
+    @new_message = Message.new(message_params)
+    authorize @new_message
+
+    if @new_message.save
+      respond_to do |format|
+        format.html { redirect_to new_message_path }
+        format.js  # <-- will render `app/views/new_messages/create.js.erb`
+      end
     else
-      redirect_to root_path
+      respond_to do |format|
+        format.html { render new_message_path }
+        format.js  # <-- idem
+      end
     end
   end
 

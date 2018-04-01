@@ -1,19 +1,10 @@
 <div class="container-contact">
-<%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-contact-page') %>
-<span class="close-button" id="closing-cross-contact"></span>
-  <div class="flex-box-contact">
-    <div class="agency-intro">
-      <h3>Contact</h3>
-      <p><%= @agency.address %></p>
-      <p><%= @agency.email %> - <%= @agency.phone %></p>
-    </div>
-    <div class="container-message">
-      <%= simple_form_for @message do |f| %>
-        <%= f.input :from_email_address, label: 'Adresse email' %> <%= f.input :from_tel, label: 'Télephone' %>
-        <%= f.input :subject, label: 'Object' %>
-        <%= f.input :message %>
-        <%= f.button :submit, value: 'Envoyer' %>
-      <% end %>
-    </div>
+  <%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-contact-page') %>
+  <span class="close-button" id="closing-cross-contact"></span>
+  <div class="agency-intro">
+    <h3>Contact</h3>
+    <p><%= @agency.address %></p>
+    <p><%= @agency.email %> - <%= @agency.phone %></p>
+    <%= link_to 'Envoyer un message', new_message_path, target: '_blank' %>
   </div>
 </div>
