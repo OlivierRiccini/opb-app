@@ -14,7 +14,7 @@
 
 console.log('Hello World from Webpacker')
 
-import 'shared/arrows-up-and-down'
+import 'shared/_arrows-up-and-down'
 
 import AOS from 'aos'
 

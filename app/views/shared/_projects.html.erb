@@ -1,6 +1,7 @@
 <div class="projects-section">
   <% i = 1 %>
   <% @projects.each do |project| %>
+  <% i += 1 %>
     <div class="projects-container">
       <div class="row project-presentation">
           <% if project.images.first.nil? %>
@@ -9,27 +10,30 @@
                 <p>Sorry no pictures</p>
               </div>
           <% else %>
-              <div class="col-xs-12 col-sm-6 images-container" data-aos="fade-up-right" data-aos-delay="200">
-              <div class="image-active">
-              <%= cl_image_tag project.images.first.url %>
+            <div class="col-xs-12 col-sm-6 images-container" data-aos="fade-up-right" data-aos-delay="200">
+              <div class="image-active w3-">
+                <% project.images.each do |image| %>
+                  <%= cl_image_tag image.url, class: "mySlides#{i} images" %>
+                <% end %>
               </div>
               <div class="images-mozaic row">
+                <% index_image_section = 0 %>
                 <% project.images.each do |image| %>
+                  <% index_image_section += 1 %>
                   <div class="col-xs-6 col-sm-3 image-mozaic-box">
-                    <%= cl_image_tag image.url %>
+                    <%= cl_image_tag image.url, class: "demo#{i} w3-opacity w3-hover-opacity-off demo-images", :onclick=> "currentDiv(#{index_image_section}, #{i})" %>
                   </div>
                 <% end %>
               </div>
             </div>
           <% end %>
-          <div class="col-xs-12 col-sm-6" data-aos="fade-up-left" data-aos-delay="200">
+          <div class="col-xs-12 col-sm-6 text-container" data-aos="fade-up-left" data-aos-delay="200">
             <h3 class="title-project text-animate"><%= project.title %></h3>
             <h5 class="description-project text-animate"><%= project.description %></h5>
             <p class="type_1-project text-animate"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
             <p class="content-project text-animate"><%= project.content %></p>
           </div>
         </div>
-        <% i += 1 %>
         <div class="arrow-up-circle" data-arrow-up="<%= i %>">
           <div class="arrow-up arrow-up-animated"></div>
           <div class="arrow-up arrow-up"></div>
@@ -40,5 +44,33 @@
         </div>
       </div>
     </div>
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex, <%= i %>);
+
+    function plusDivs(n, index_project) {
+      showDivs(slideIndex += n, index_project);
+    }
+
+    function currentDiv(n, index_project) {
+      showDivs(slideIndex = n, index_project);
+    }
+
+    function showDivs(n, index_project) {
+      var i;
+      var x = document.getElementsByClassName(`mySlides${index_project}`);
+      var dots = document.getElementsByClassName(`demo${index_project}`);
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+      }
+      x[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " w3-opacity-off";
+    }
+    </script>
   <% end %>
 </div>

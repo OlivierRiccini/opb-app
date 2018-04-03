@@ -48,3 +48,28 @@
 .image-mozaic-box {
   padding: 0;
 }
+
+.images-container {
+  z-index: 9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .images {
+  display:none
+  };
+  .demo-images {
+  cursor:pointer;
+  &:hover {
+    opacity: 0.6;
+  }
+  }
+}
+
+.image-active {
+  margin: 0 auto;
+}
+
+.images-mozaic {
+  display: flex;
+  justify-content: center;
+}
