@@ -1,18 +1,20 @@
-<div class="banner-index">
-  <div class="info-opb-left">
-    <%= render 'shared/logo_final' %>
+<div id="fullpage">
+  <div class="banner-index section">
+    <div class="info-opb-left">
+      <%= render 'shared/logo_final' %>
+    </div>
+    <div class="info-opb-right">
+      <ul>
+        <li><i class="fas fa-plus-circle" id="agence-nav"></i> <div class="nav-item"><span class="nav-label"> L'agence</span></div></li>
+        <li><i class="fas fa-plus-circle" id="projets-nav"></i> <div class="nav-item"><span class="nav-label"> Les projets</span></div></li>
+        <li><i class="fas fa-plus-circle" id="contact-nav"></i> <div class="nav-item"><span class="nav-label"> Contact</span></div></li>
+      </ul>
+    </div>
+      <%= render 'shared/arrow_down' %>
   </div>
-  <div class="info-opb-right">
-    <ul>
-      <li><i class="fas fa-plus-circle" id="agence-nav"></i> <div class="nav-item"><span class="nav-label"> L'agence</span></div></li>
-      <li><i class="fas fa-plus-circle" id="projets-nav"></i> <div class="nav-item"><span class="nav-label"> Les projets</span></div></li>
-      <li><i class="fas fa-plus-circle" id="contact-nav"></i> <div class="nav-item"><span class="nav-label"> Contact</span></div></li>
-    </ul>
-  </div>
-    <%= render 'shared/arrow_down' %>
+  <%= render 'shared/projects' %>
 </div>
 
-<%= render 'shared/projects' %>
 <%= render 'shared/agency_page' %>
 <%= render 'shared/list_projects' %>
 <%= render 'shared/contact_page' %>

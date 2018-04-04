@@ -1,8 +1,7 @@
-<div class="projects-section">
   <% i = 1 %>
   <% @projects.each do |project| %>
   <% i += 1 %>
-    <div class="projects-container">
+    <div class="projects-container section">
       <div class="row project-presentation">
           <% if project.images.first.nil? %>
             <div class="col-xs-12 col-sm-6 images-container">
@@ -10,7 +9,7 @@
                 <p>Sorry no pictures</p>
               </div>
           <% else %>
-            <div class="col-xs-12 col-sm-6 images-container" data-aos="fade-up-right" data-aos-delay="200">
+            <div class="col-xs-12 col-sm-6 images-container">
               <div class="image-active w3-">
                 <% project.images.each do |image| %>
                   <%= cl_image_tag image.url, class: "mySlides#{i} images" %>
@@ -27,7 +26,7 @@
               </div>
             </div>
           <% end %>
-          <div class="col-xs-12 col-sm-6 text-container" data-aos="fade-up-left" data-aos-delay="200">
+          <div class="col-xs-12 col-sm-6 text-container">
             <h3 class="title-project text-animate"><%= project.title %></h3>
             <h5 class="description-project text-animate"><%= project.description %></h5>
             <p class="type_1-project text-animate"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
@@ -42,35 +41,34 @@
           <div class="arrow-down arrow-down-animated"></div>
           <div class="arrow-down arrow-down"></div>
         </div>
+        <script>
+        var slideIndex = 1;
+        showDivs(slideIndex, <%= i %>);
+
+        function plusDivs(n, index_project) {
+          showDivs(slideIndex += n, index_project);
+        }
+
+        function currentDiv(n, index_project) {
+          showDivs(slideIndex = n, index_project);
+        }
+
+        function showDivs(n, index_project) {
+          var i;
+          var x = document.getElementsByClassName(`mySlides${index_project}`);
+          var dots = document.getElementsByClassName(`demo${index_project}`);
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+          }
+          x[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " w3-opacity-off";
+        }
+        </script>
       </div>
-    </div>
-    <script>
-    var slideIndex = 1;
-    showDivs(slideIndex, <%= i %>);
-
-    function plusDivs(n, index_project) {
-      showDivs(slideIndex += n, index_project);
-    }
-
-    function currentDiv(n, index_project) {
-      showDivs(slideIndex = n, index_project);
-    }
-
-    function showDivs(n, index_project) {
-      var i;
-      var x = document.getElementsByClassName(`mySlides${index_project}`);
-      var dots = document.getElementsByClassName(`demo${index_project}`);
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-      }
-      x[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " w3-opacity-off";
-    }
-    </script>
-  <% end %>
-</div>
+    <% end %>
+  </div>

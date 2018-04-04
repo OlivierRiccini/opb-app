@@ -16,9 +16,13 @@ console.log('Hello World from Webpacker')
 
 import 'shared/_arrows-up-and-down'
 
-import AOS from 'aos'
+// import 'fullpage.js/vendors/scrolloverflow.min.js'
+import 'iscroll'
+import 'fullpage.js'
 
-AOS.init({
-  duration: 1200,
-  easing: 'ease-in-out-back'
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    scrollOverflow: false,
+    scrollingSpeed: 1500
+  });
 });
