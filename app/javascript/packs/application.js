@@ -14,15 +14,13 @@
 
 console.log('Hello World from Webpacker')
 
-import 'shared/_arrows-up-and-down'
+import 'shared/_arrows-up-and-down';
 
-// import 'fullpage.js/vendors/scrolloverflow.min.js'
-import 'iscroll'
-import 'fullpage.js'
+import 'fullpage.js';
+// import 'motion-ui';
 
 $(document).ready(function() {
   $('#fullpage').fullpage({
-    scrollOverflow: false,
     scrollingSpeed: 1500
   });
 });

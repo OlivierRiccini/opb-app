@@ -5,7 +5,8 @@ const webpack = require('webpack')
 environment.plugins.append('Provide',
   new webpack.ProvidePlugin({
     $: 'jquery',
-    jQuery: 'jquery'
+    jQuery: 'jquery',
+    IScroll: "fullpage.js/vendors/scrolloverflow.min"
   })
 )
 
