@@ -14,11 +14,13 @@
 
 console.log('Hello World from Webpacker')
 
-import 'shared/_arrows-up-and-down'
+import 'shared/_arrows-up-and-down';
 
-import AOS from 'aos'
+import 'fullpage.js';
+// import 'motion-ui';
 
-AOS.init({
-  duration: 1200,
-  easing: 'ease-in-out-back'
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    scrollingSpeed: 1500
+  });
 });

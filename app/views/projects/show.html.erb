@@ -39,7 +39,7 @@
                 <%= cl_image_tag image.url, class: "demo w3-opacity w3-hover-opacity-off", :onclick=> "currentDiv(#{index_image})" %>
                 <br>
                 <% if policy(image).destroy? %>
-                  <%= link_to "Delete image", project_image_path(image), :method => :delete, :data => {:confirm => "Are you sure Mr Oli Pozzo?"} %>
+                  <%= link_to "Delete image", project_image_path(@project, image), :method => :delete, :data => {:confirm => "Are you sure Mr Oli Pozzo?"} %>
                 <% end %>
               </div>
             <% end %>

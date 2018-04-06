@@ -1,6 +1,5 @@
 /* Drawing Logo */
 const path = document.querySelectorAll('path');
-// const rect = document.querySelectorAll('rect');
 const logo = document.getElementById('logo');
 
 let intervalDraw = null;
@@ -14,12 +13,6 @@ function draw() {
       clearInterval(intervalDraw);
     }
   });
-  // rect.forEach(function(element) {
-  //   element.style.strokeDasharray = `${i}`;
-  //   if(i >= 3000) {
-  //     clearInterval(intervalDraw);
-  //   }
-  // });
 }
 
 function defIntervalDraw() {
@@ -41,12 +34,6 @@ function fill() {
       clearInterval(intervalFill);
     }
   });
-  // rect.forEach(function(element) {
-  //   element.style.fill = `rgba(0,0,0,${j})`;
-  //   if(j >= 1) {
-  //     clearInterval(intervalFill);
-  //   }
-  // });
 }
 
 function defIntervalFill() {
@@ -54,33 +41,6 @@ function defIntervalFill() {
 }
 
 setTimeout(defIntervalFill, 4000);
-//////////////////////////////////////////////////////////////:
-
-/* Easing strokes */
-let intervalInverseDraw = null;
-
-let i2 = 3000;
-function inverseDraw() {
-  i2 -= 5;
-  path.forEach(function(element) {
-    element.style.strokeDasharray = `${i2}`;
-    if(i2 <= 1500) {
-      clearInterval(intervalInverseDraw);
-    }
-  });
-  // rect.forEach(function(element) {
-  //   element.style.strokeDasharray = `${i2}`;
-  //   if(i2 <= 1500) {
-  //     clearInterval(intervalInverseDraw);
-  //   }
-  // });
-}
-
-function defIntervalInverseDraw() {
-  intervalInverseDraw = setInterval(inverseDraw, 20);
-}
-
-setTimeout(defIntervalInverseDraw, 4100);
 /////////////////////////////////////////////////////
 
 
@@ -138,9 +98,9 @@ function animItem3() {
 
 initItem();
 animItem();
-setTimeout(defIntervalAnimItem1, 10000);
-setTimeout(defIntervalAnimItem2, 11500);
-setTimeout(defIntervalAnimItem3, 13000);
+setTimeout(defIntervalAnimItem1, 5000);
+setTimeout(defIntervalAnimItem2, 5000);
+setTimeout(defIntervalAnimItem3, 5000);
 ////////////////////////////////////////////////////
 
 /* Animating plus signs, with spin animation */
@@ -165,13 +125,9 @@ function defIntervalSpin3(deg, direction) {
 function animPlus() {
   setTimeout(function(){
     plusSigns[0].style.visibility = 'visible';
-  }, 9500);
-  setTimeout(function(){
     plusSigns[1].style.visibility = 'visible';
-  }, 11000);
-  setTimeout(function(){
     plusSigns[2].style.visibility = 'visible';
-  }, 12500);
+  }, 5000);
 }
 
 let r1 = 0;
@@ -232,9 +188,12 @@ function spin3(deg, direction) {
 }
 
 animPlus();
-setTimeout(function() { defIntervalSpin1(180, 1); }, 10000);
-setTimeout(function() { defIntervalSpin2(180, 1); }, 11500);
-setTimeout(function() { defIntervalSpin3(180, 1); }, 13000);
+setTimeout(function() {
+  defIntervalSpin1(180, 1);
+  defIntervalSpin2(180, 1);
+  defIntervalSpin3(180, 1);
+}, 5000);
+
 /////////////////////////////////////////////////////////////////
 
 /* Hover effect on plus signs*/

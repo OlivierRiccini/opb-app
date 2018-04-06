@@ -1,21 +1,117 @@
-<div class="banner-index">
-  <div class="info-opb-left">
-    <%= render 'shared/logo_final' %>
-  </div>
-  <div class="info-opb-right">
-    <ul>
-      <li><i class="fas fa-plus-circle" id="agence-nav"></i> <div class="nav-item"><span class="nav-label"> L'agence</span></div></li>
-      <li><i class="fas fa-plus-circle" id="projets-nav"></i> <div class="nav-item"><span class="nav-label"> Les projets</span></div></li>
-      <li><i class="fas fa-plus-circle" id="contact-nav"></i> <div class="nav-item"><span class="nav-label"> Contact</span></div></li>
-    </ul>
-  </div>
-    <%= render 'shared/arrow_down' %>
-</div>
+<%= render 'shared/fullpage_page' %>
 
-<%= render 'shared/projects' %>
-<%= render 'shared/agency_page' %>
-<%= render 'shared/list_projects' %>
-<%= render 'shared/contact_page' %>
+<script>
+const body = document.querySelector('body');
+let fullPage = document.getElementById('fullpage');
+
+const agencyButton = document.getElementById('agence-nav');
+const projectsButton = document.getElementById('projets-nav');
+const contactButton = document.getElementById('contact-nav');
+
+const circleArrow = document.querySelectorAll('.arrow-down-circle');
+
+let fadeOutInterval = null;
+
+function defFadeOutInterval(from_page, to_page) {
+  fadeOutInterval = setInterval(function(){fadeOut(from_page, to_page)}, 50);
+  fadeOutIndex = 1;
+}
+
+let fadeOutIndex = 1;
+
+function fadeOut(from_page, to_page) {
+
+  if ( from_page === agency ) {
+    from_page = document.getElementById('agency');
+  } else if ( from_page === listProjects ) {
+      from_page = document.getElementById('list-projects');
+  } else if ( from_page === contact ) {
+      from_page = document.getElementById('contact');
+  }
+  else {
+      from_page = document.getElementById('fullpage');
+  }
+
+  fadeOutIndex -= 0.05;
+  from_page.style.opacity = fadeOutIndex;
+  circleArrow.forEach(function(arrow){
+    arrow.style.opacity = fadeOutIndex;
+  });
+
+  if (fadeOutIndex <= 0) {
+    clearInterval(fadeOutInterval);
+    changeHtml(from_page, to_page);
+  }
+}
+
+const agency = `<%= render 'shared/agency_page' %>`;
+const listProjects = `<%= render 'shared/list_projects' %>`;
+const contact = `<%= render 'shared/contact_page' %>`;
+
+function changeHtml(from_page, to_page) {
+  let pageHtml = null;
+  if ( from_page === fullPage ) {
+    body.insertAdjacentHTML('afterbegin', to_page);
+  } else {
+    from_page.parentNode.removeChild(from_page);
+  }
+
+  if ( to_page === agency ) {
+    pageHtml = document.getElementById('agency');
+
+  } else if ( to_page === listProjects ) {
+      pageHtml = document.getElementById('list-projects');
+  } else if ( to_page === contact ) {
+      pageHtml = document.getElementById('contact');
+  }
+  else {
+      pageHtml = document.getElementById('fullpage');
+  }
+
+  defDisplayInterval(from_page, pageHtml);
+}
+
+let displayInterval = null;
+
+let displayIndex = 0;
+
+function defDisplayInterval(from_page, to_page) {
+  displayInterval = setInterval(function(){display(from_page, to_page)}, 50);
+  displayIndex = 0;
+}
+
+function display(from_page, to_page) {
+  displayIndex += 0.05;
+  to_page.style.opacity = displayIndex;
+
+  if (displayIndex > 1) {
+    clearInterval(displayInterval);
+
+    const closingCrossAgency = document.getElementById('closing-cross-agency');
+    const closingCrossProjectList = document.getElementById('closing-cross-list-projects');
+    const closingCrossContact = document.getElementById('closing-cross-contact');
+
+    if ( closingCrossAgency != null ) {
+      document.querySelector('.agency-intro h3').classList.add('wiggle');
+      closingCrossAgency.addEventListener('click', function(){defFadeOutInterval(agency, fullPage)});
+    }
+
+    if ( closingCrossProjectList != null ) {
+      closingCrossProjectList.addEventListener('click', function(){defFadeOutInterval(listProjects, fullPage)});
+    }
+
+    if ( closingCrossContact != null ) {
+      closingCrossContact.addEventListener('click', function(){defFadeOutInterval(contact, fullPage)});
+    }
+  }
+}
+
+agencyButton.addEventListener('click', function(){defFadeOutInterval(fullPage, agency)});
+projectsButton.addEventListener('click', function(){defFadeOutInterval(fullPage, listProjects)});
+contactButton.addEventListener('click', function(){defFadeOutInterval(fullPage, contact)});
+
+
+</script>
 
 <%= javascript_pack_tag 'home-constructor' %>
 <%= javascript_pack_tag 'list-projects' %>
