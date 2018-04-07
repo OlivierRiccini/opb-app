@@ -1,5 +1,6 @@
 /* Arrow down */
 .arrow-down-circle {
+  display: none;
   position: absolute;
   left: calc(50% - 30px);
   bottom: 15px;
@@ -36,6 +37,7 @@
 
 /* Arrow up */
 .arrow-up-circle {
+  display: none;
   position: absolute;
   left: calc(50% - 30px);
   top: 15px;

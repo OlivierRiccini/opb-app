@@ -18,9 +18,3 @@ import 'shared/_arrows-up-and-down';
 
 import 'fullpage.js';
 // import 'motion-ui';
-
-$(document).ready(function() {
-  $('#fullpage').fullpage({
-    scrollingSpeed: 1500
-  });
-});

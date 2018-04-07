@@ -1,14 +1,37 @@
-function srollDown(index) {
-  $("html, body").animate({ scrollTop: $(window).height() * index }, "slow"); return false;
-}
+/* Fullpage.js implementation for section navigation */
+const nbProjects = document.querySelectorAll('.projects-container').length;
 
-function srollUp(index) {
-  $("html, body").animate({ scrollTop : $(window).height() * index - $(window).height() * 2 }, "slow"); return false;
-}
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    scrollingSpeed: 1500,
+     afterLoad: function () {
+      if ( this[0].dataset.indexSection != 0 ) {
+        $('.arrow-top-0').fadeIn();
+        $('.arrow-up-circle').fadeIn();
+      } else {
+        $('.arrow-top-0').fadeOut();
+        $('.arrow-up-circle').fadeOut();
+      }
+
+      if ( this[0].dataset.indexSection == nbProjects ) {
+        $('.arrow-down-circle').fadeOut();
+      } else {
+        $('.arrow-down-circle').fadeIn();
+      }
+    }
+  });
+});
+
+/* Arrow to top 0 */
+$(document).ready(function(){
+  $('.arrow-top-0').click(function(){
+    $.fn.fullpage.moveTo(1);
+    return false;
+  });
+});
 
 /* Arrow pulse bottom */
 const arrowDownCircle = document.querySelectorAll('.arrow-down-circle');
-const nbProjects = document.querySelectorAll('.projects-container').length;
 
 function globalArrowDownAnimation() {
   arrowDownCircle.forEach(function(arrow) {
@@ -36,7 +59,7 @@ function globalArrowDownAnimation() {
     }
 
     /* calling scroll down function using index defining scrolling height */
-    arrow.addEventListener("click", function(){srollDown(arrow.dataset.arrowDown)});
+    arrow.addEventListener("click", function(){$.fn.fullpage.moveSectionDown()});
 
     if (arrow.dataset.arrowDown == nbProjects + 1) {
       arrow.style.display = 'none';
@@ -78,30 +101,10 @@ function globalArrowUpAnimation() {
     }
 
     /* calling scroll down function using index defining scrolling height */
-    arrow.addEventListener("click", function(){srollUp(arrow.dataset.arrowUp)});
+    arrow.addEventListener("click", function(){$.fn.fullpage.moveSectionUp();});
 
   defIntervalArrowUp();
 
   });
 }
 globalArrowUpAnimation();
-
-
-/* Arrow to top 0 */
-
-$(document).ready(function(){
-  //Check to see if the window is top if not then display button
-  $(window).scroll(function(){
-    if ($(this).scrollTop() > 400) {
-      $('.arrow-top-0').fadeIn();
-    } else {
-      $('.arrow-top-0').fadeOut();
-    }
-  });
-  //Click event to scroll to top
-  $('.arrow-top-0').click(function(){
-    $('html, body').animate({scrollTop : 0},800);
-    return false;
-  });
-
-});

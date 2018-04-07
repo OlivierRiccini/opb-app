@@ -105,6 +105,8 @@ setTimeout(defIntervalAnimItem3, 5000);
 
 /* Animating plus signs, with spin animation */
 const plusSigns = document.querySelectorAll('.fa-plus-circle');
+const navbar = document.querySelector('.info-opb-right');
+
 
 let intervalSpin1 = null;
 let intervalSpin2 = null;

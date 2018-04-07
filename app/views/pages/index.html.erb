@@ -1,9 +1,19 @@
 <%= render 'shared/fullpage_page' %>
 
+<div class="arrow-up-circle">
+  <div class="arrow-up arrow-up-animated"></div>
+  <div class="arrow-up arrow-up"></div>
+</div>
+<div class="arrow-down-circle">
+  <div class="arrow-down arrow-down-animated"></div>
+  <div class="arrow-down arrow-down"></div>
+</div>
+
 <script>
 const body = document.querySelector('body');
 let fullPage = document.getElementById('fullpage');
 
+const navbar = document.querySelector('.info-opb-right');
 const agencyButton = document.getElementById('agence-nav');
 const projectsButton = document.getElementById('projets-nav');
 const contactButton = document.getElementById('contact-nav');
@@ -13,7 +23,7 @@ const circleArrow = document.querySelectorAll('.arrow-down-circle');
 let fadeOutInterval = null;
 
 function defFadeOutInterval(from_page, to_page) {
-  fadeOutInterval = setInterval(function(){fadeOut(from_page, to_page)}, 50);
+  fadeOutInterval = setInterval(function(){fadeOut(from_page, to_page)}, 20);
   fadeOutIndex = 1;
 }
 
@@ -21,51 +31,84 @@ let fadeOutIndex = 1;
 
 function fadeOut(from_page, to_page) {
 
-  if ( from_page === agency ) {
-    from_page = document.getElementById('agency');
-  } else if ( from_page === listProjects ) {
-      from_page = document.getElementById('list-projects');
-  } else if ( from_page === contact ) {
-      from_page = document.getElementById('contact');
-  }
-  else {
-      from_page = document.getElementById('fullpage');
-  }
+  let newPage = null;
+  let from_pageHTML = null;
 
   fadeOutIndex -= 0.05;
-  from_page.style.opacity = fadeOutIndex;
-  circleArrow.forEach(function(arrow){
-    arrow.style.opacity = fadeOutIndex;
-  });
+
+  if ( to_page === 'agency' ) {
+    newPage = `<%= render 'shared/agency_page' %>`;
+    from_pageHTML = fullPage;
+    navbar.style.opacity = fadeOutIndex - 0.5;
+    navbar.style.zIndex = 0;
+    circleArrow.forEach(function(arrow){
+        arrow.style.opacity = fadeOutIndex - 0.5;
+      });
+
+  } else if ( to_page === 'listProjects' ) {
+    newPage = `<%= render 'shared/list_projects' %>`;
+    from_pageHTML = fullPage;
+    navbar.style.opacity = fadeOutIndex - 0.5;
+    navbar.style.zIndex = 0;
+    circleArrow.forEach(function(arrow){
+        arrow.style.opacity = fadeOutIndex - 0.5;
+      });
+
+  } else if ( to_page === 'contact' ) {
+    newPage = `<%= render 'shared/contact_page' %>`;
+    from_pageHTML = fullPage;
+    navbar.style.opacity = fadeOutIndex - 0.5;
+    navbar.style.zIndex = 0;
+    circleArrow.forEach(function(arrow){
+        arrow.style.opacity = fadeOutIndex - 0.5;
+      });
+
+  } else {
+    newPage = fullPage;
+    if ( from_page === 'agency' ) {
+      from_pageHTML = document.getElementById('agency');
+    } else if ( from_page === 'listProjects' ) {
+      from_pageHTML = document.getElementById('list-projects');
+    } else if ( from_page === 'contact' ) {
+      from_pageHTML = document.getElementById('contact');
+    }
+  }
+
+  from_pageHTML.style.opacity = fadeOutIndex;
 
   if (fadeOutIndex <= 0) {
     clearInterval(fadeOutInterval);
-    changeHtml(from_page, to_page);
+    changeHtml(from_pageHTML, newPage);
   }
 }
 
-const agency = `<%= render 'shared/agency_page' %>`;
-const listProjects = `<%= render 'shared/list_projects' %>`;
-const contact = `<%= render 'shared/contact_page' %>`;
 
-function changeHtml(from_page, to_page) {
+function changeHtml(from_page, newPage) {
   let pageHtml = null;
+
+  console.log(from_page);
   if ( from_page === fullPage ) {
-    body.insertAdjacentHTML('afterbegin', to_page);
+    body.insertAdjacentHTML('beforeend', newPage);
   } else {
     from_page.parentNode.removeChild(from_page);
+    pageHtml = newPage;
   }
 
-  if ( to_page === agency ) {
-    pageHtml = document.getElementById('agency');
 
-  } else if ( to_page === listProjects ) {
-      pageHtml = document.getElementById('list-projects');
-  } else if ( to_page === contact ) {
-      pageHtml = document.getElementById('contact');
+  agency = document.getElementById('agency');
+  listProjects = document.getElementById('list-projects');
+  contact = document.getElementById('contact');
+
+  if ( agency != null ) {
+    pageHtml = agency;
   }
-  else {
-      pageHtml = document.getElementById('fullpage');
+
+  if ( listProjects != null ) {
+    pageHtml = listProjects;
+  }
+
+  if ( contact != null ) {
+    pageHtml = contact;
   }
 
   defDisplayInterval(from_page, pageHtml);
@@ -73,7 +116,7 @@ function changeHtml(from_page, to_page) {
 
 let displayInterval = null;
 
-let displayIndex = 0;
+let displayIndex = -0.5;
 
 function defDisplayInterval(from_page, to_page) {
   displayInterval = setInterval(function(){display(from_page, to_page)}, 50);
@@ -84,6 +127,15 @@ function display(from_page, to_page) {
   displayIndex += 0.05;
   to_page.style.opacity = displayIndex;
 
+  if ( to_page === fullPage ) {
+    console.log('je suis dans to_page === fullPage');
+     navbar.style.zIndex = 9;
+    navbar.style.opacity = displayIndex;
+    circleArrow.forEach(function(arrow){
+      arrow.style.opacity = displayIndex;
+    });
+  }
+
   if (displayIndex > 1) {
     clearInterval(displayInterval);
 
@@ -92,23 +144,22 @@ function display(from_page, to_page) {
     const closingCrossContact = document.getElementById('closing-cross-contact');
 
     if ( closingCrossAgency != null ) {
-      document.querySelector('.agency-intro h3').classList.add('wiggle');
-      closingCrossAgency.addEventListener('click', function(){defFadeOutInterval(agency, fullPage)});
+      closingCrossAgency.addEventListener('click', function(){defFadeOutInterval('agency', fullPage)});
     }
 
     if ( closingCrossProjectList != null ) {
-      closingCrossProjectList.addEventListener('click', function(){defFadeOutInterval(listProjects, fullPage)});
+      closingCrossProjectList.addEventListener('click', function(){defFadeOutInterval('listProjects', fullPage)});
     }
 
     if ( closingCrossContact != null ) {
-      closingCrossContact.addEventListener('click', function(){defFadeOutInterval(contact, fullPage)});
+      closingCrossContact.addEventListener('click', function(){defFadeOutInterval('contact', fullPage)});
     }
   }
 }
 
-agencyButton.addEventListener('click', function(){defFadeOutInterval(fullPage, agency)});
-projectsButton.addEventListener('click', function(){defFadeOutInterval(fullPage, listProjects)});
-contactButton.addEventListener('click', function(){defFadeOutInterval(fullPage, contact)});
+agencyButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'agency')});
+projectsButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'listProjects')});
+contactButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'contact')});
 
 
 </script>
