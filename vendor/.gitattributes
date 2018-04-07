@@ -1,2 +1,2 @@
-.C linguist-language=Ruby
+*.C linguist-language=Ruby
 *.H linguist-language=Ruby
