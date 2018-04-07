@@ -1,7 +1,7 @@
-  <% i = 1 %>
+  <% i = 0 %>
   <% @projects.each do |project| %>
   <% i += 1 %>
-    <div class="projects-container section">
+    <div class="projects-container section" data-index-section="<%= i %>">
       <div class="row project-presentation">
           <% if project.images.first.nil? %>
             <div class="col-xs-12 col-sm-6 images-container">
@@ -33,14 +33,14 @@
             <p class="content-project text-animate"><%= project.content %></p>
           </div>
         </div>
-        <div class="arrow-up-circle" data-arrow-up="<%= i %>">
+        <!-- <div class="arrow-up-circle" data-arrow-up="<%= i %>">
           <div class="arrow-up arrow-up-animated"></div>
           <div class="arrow-up arrow-up"></div>
         </div>
-          <div class="arrow-down-circle" data-arrow-down="<%= i %>">
+        <div class="arrow-down-circle" data-arrow-down="<%= i %>">
           <div class="arrow-down arrow-down-animated"></div>
           <div class="arrow-down arrow-down"></div>
-        </div>
+        </div> -->
         <script>
         var slideIndex = 1;
         showDivs(slideIndex, <%= i %>);
