@@ -8,9 +8,11 @@ $(document).ready(function() {
       if ( this[0].dataset.indexSection != 0 ) {
         $('.arrow-top-0').fadeIn();
         $('.arrow-up-circle').fadeIn();
+        $('.logo-index-page').fadeIn();
       } else {
         $('.arrow-top-0').fadeOut();
         $('.arrow-up-circle').fadeOut();
+        $('.logo-index-page').fadeOut();
       }
 
       if ( this[0].dataset.indexSection == nbProjects ) {

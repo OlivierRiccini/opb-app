@@ -1,3 +1,5 @@
+<%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-index-page') %>
+
 <%= render 'shared/fullpage_page' %>
 
 <div class="arrow-up-circle">
@@ -9,6 +11,11 @@
   <div class="arrow-down arrow-down"></div>
 </div>
 
+<div class="arrow-top-0">
+  <div class="arrow-up-animated arrow-up"></div>
+  <p>Top</p>
+</div>
+
 <script>
 const body = document.querySelector('body');
 let fullPage = document.getElementById('fullpage');
@@ -18,7 +25,11 @@ const agencyButton = document.getElementById('agence-nav');
 const projectsButton = document.getElementById('projets-nav');
 const contactButton = document.getElementById('contact-nav');
 
-const circleArrow = document.querySelectorAll('.arrow-down-circle');
+const circleArrowDown = document.querySelector('.arrow-down-circle');
+const circleArrowUp = document.querySelector('.arrow-up-circle');
+const arrowTop = document.querySelector('.arrow-top-0');
+
+console.log(arrowTop);
 
 let fadeOutInterval = null;
 
@@ -41,27 +52,27 @@ function fadeOut(from_page, to_page) {
     from_pageHTML = fullPage;
     navbar.style.opacity = fadeOutIndex - 0.5;
     navbar.style.zIndex = 0;
-    circleArrow.forEach(function(arrow){
-        arrow.style.opacity = fadeOutIndex - 0.5;
-      });
+    circleArrowDown.style.opacity = fadeOutIndex - 0.5;
+    circleArrowUp.style.opacity = fadeOutIndex - 0.5;
+    arrowTop.style.opacity = fadeOutIndex - 0.5;
 
   } else if ( to_page === 'listProjects' ) {
     newPage = `<%= render 'shared/list_projects' %>`;
     from_pageHTML = fullPage;
     navbar.style.opacity = fadeOutIndex - 0.5;
     navbar.style.zIndex = 0;
-    circleArrow.forEach(function(arrow){
-        arrow.style.opacity = fadeOutIndex - 0.5;
-      });
+    circleArrowDown.style.opacity = fadeOutIndex - 0.5;
+    circleArrowUp.style.opacity = fadeOutIndex - 0.5;
+    arrowTop.style.opacity = fadeOutIndex - 0.5;
 
   } else if ( to_page === 'contact' ) {
     newPage = `<%= render 'shared/contact_page' %>`;
     from_pageHTML = fullPage;
     navbar.style.opacity = fadeOutIndex - 0.5;
     navbar.style.zIndex = 0;
-    circleArrow.forEach(function(arrow){
-        arrow.style.opacity = fadeOutIndex - 0.5;
-      });
+    circleArrowDown.style.opacity = fadeOutIndex - 0.5;
+    circleArrowUp.style.opacity = fadeOutIndex - 0.5;
+    arrowTop.style.opacity = fadeOutIndex - 0.5;
 
   } else {
     newPage = fullPage;
@@ -128,12 +139,11 @@ function display(from_page, to_page) {
   to_page.style.opacity = displayIndex;
 
   if ( to_page === fullPage ) {
-    console.log('je suis dans to_page === fullPage');
      navbar.style.zIndex = 9;
     navbar.style.opacity = displayIndex;
-    circleArrow.forEach(function(arrow){
-      arrow.style.opacity = displayIndex;
-    });
+    circleArrowDown.style.opacity = displayIndex;
+    circleArrowUp.style.opacity = displayIndex;
+    arrowTop.style.opacity = displayIndex;
   }
 
   if (displayIndex > 1) {
