@@ -1,5 +1,5 @@
 /* Drawing Logo */
-const path = document.querySelectorAll('path');
+const path = document.querySelectorAll('#Calque_1 path');
 const logo = document.getElementById('logo');
 
 let intervalDraw = null;
@@ -8,6 +8,7 @@ let i = 1500;
 function draw() {
   i += 5;
   path.forEach(function(element) {
+    element.style.stroke = `#000`;
     element.style.strokeDasharray = `${i}`;
     if(i >= 3000) {
       clearInterval(intervalDraw);
@@ -205,3 +206,16 @@ plusSigns[1].addEventListener('mouseover', function() { defIntervalSpin2(90, 1);
 plusSigns[1].addEventListener('mouseleave', function() { defIntervalSpin2(-90, -1); });
 plusSigns[2].addEventListener('mouseover', function() { defIntervalSpin3(90, 1); });
 plusSigns[2].addEventListener('mouseleave', function() { defIntervalSpin3(-90, -1); });
+
+/////////////////////////////////////////////////////////////////
+
+/* Displaying arrow down */
+const arrowDown = document.querySelector('.arrow-down-circle ');
+
+function displayArrowDown() {
+  setTimeout(function(){
+    arrowDown.style.visibility = 'visible';
+  }, 6500);
+}
+
+displayArrowDown();
