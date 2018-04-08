@@ -3,8 +3,10 @@
   <span class="close-button" id="closing-cross-contact"></span>
   <div class="agency-intro">
     <h3>Contact</h3>
-    <p><%= @agency.address %></p>
-    <p><%= @agency.email %> - <%= @agency.phone %></p>
+    <p class="address"><%= @agency_address[2] %></p>
+    <p class="address"><%= @agency_address[1] %></p>
+    <p class="address"><strong><%= @agency_address[0] %></strong></p>
+    <p class="email"><%= @agency.email %> - <%= @agency.phone %></p>
     <%= link_to 'Envoyer un message', new_message_path, target: '_blank' %>
   </div>
 </div>

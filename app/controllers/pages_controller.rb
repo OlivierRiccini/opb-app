@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   def index
     @projects = Project.all
     @agency = Agency.first
+    @agency_address = Agency.first.address.split(',')
   end
 end

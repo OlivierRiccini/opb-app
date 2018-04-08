@@ -9,11 +9,31 @@
   background-color: #f4f4f4;
   opacity: 0;
   font-weight: lighter;
+  text-align: center;
   a {
     z-index: 99;
+    color: rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.5);
+    padding: 10px 5px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    &:hover {
+      text-decoration: none;
+      border-color: rgba(0,0,0,0.9);
+      color: rgba(0,0,0,0.9);
+      background-color: rgba(150,150,150,0.1);
+    }
   }
 }
 
+.address {
+  margin: 0;
+}
+
+.email {
+  margin: 15px;
+}
 
 .logo-contact-page {
   position: absolute;
@@ -36,6 +56,19 @@
     width: 150px;
   };
   .container-contact {
-    font-size: 3vh;
+    font-size: 2.7vh;
   }
+};
+
+
+@media screen and (max-width: 600px) {
+  .container-contact {
+    font-size: 2.2vh;
+  };
+};
+
+@media screen and (max-width: 400px) {
+  .container-contact {
+    font-size: 1.6vh;
+  };
 };
