@@ -29,8 +29,6 @@ const circleArrowDown = document.querySelector('.arrow-down-circle');
 const circleArrowUp = document.querySelector('.arrow-up-circle');
 const arrowTop = document.querySelector('.arrow-top-0');
 
-console.log(contactButtons);
-
 let fadeOutInterval = null;
 
 function defFadeOutInterval(from_page, to_page) {
@@ -109,7 +107,6 @@ function fadeOut(from_page, to_page) {
 function changeHtml(from_page, newPage) {
   let pageHtml = null;
 
-  console.log(from_page);
   if ( from_page === fullPage ) {
     body.insertAdjacentHTML('beforeend', newPage);
   } else {
