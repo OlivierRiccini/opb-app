@@ -20,16 +20,16 @@
 const body = document.querySelector('body');
 let fullPage = document.getElementById('fullpage');
 
-const navbar = document.querySelector('.info-opb-right');
-const agencyButton = document.getElementById('agence-nav');
-const projectsButton = document.getElementById('projets-nav');
-const contactButton = document.getElementById('contact-nav');
+const navbars = document.querySelectorAll('.navbar');
+const agencyButtons = document.querySelectorAll('.agence-nav');
+const projectsButtons = document.querySelectorAll('.projets-nav');
+const contactButtons = document.querySelectorAll('.contact-nav');
 
 const circleArrowDown = document.querySelector('.arrow-down-circle');
 const circleArrowUp = document.querySelector('.arrow-up-circle');
 const arrowTop = document.querySelector('.arrow-top-0');
 
-console.log(arrowTop);
+console.log(contactButtons);
 
 let fadeOutInterval = null;
 
@@ -50,8 +50,12 @@ function fadeOut(from_page, to_page) {
   if ( to_page === 'agency' ) {
     newPage = `<%= render 'shared/agency_page' %>`;
     from_pageHTML = fullPage;
-    navbar.style.opacity = fadeOutIndex - 0.5;
-    navbar.style.zIndex = 0;
+
+    navbars.forEach(function(navbar){
+      navbar.style.opacity = fadeOutIndex - 0.5;
+      navbar.style.zIndex = 0;
+    });
+
     circleArrowDown.style.opacity = fadeOutIndex - 0.5;
     circleArrowUp.style.opacity = fadeOutIndex - 0.5;
     arrowTop.style.opacity = fadeOutIndex - 0.5;
@@ -59,8 +63,12 @@ function fadeOut(from_page, to_page) {
   } else if ( to_page === 'listProjects' ) {
     newPage = `<%= render 'shared/list_projects' %>`;
     from_pageHTML = fullPage;
-    navbar.style.opacity = fadeOutIndex - 0.5;
-    navbar.style.zIndex = 0;
+
+    navbars.forEach(function(navbar){
+      navbar.style.opacity = fadeOutIndex - 0.5;
+      navbar.style.zIndex = 0;
+    });
+
     circleArrowDown.style.opacity = fadeOutIndex - 0.5;
     circleArrowUp.style.opacity = fadeOutIndex - 0.5;
     arrowTop.style.opacity = fadeOutIndex - 0.5;
@@ -68,8 +76,12 @@ function fadeOut(from_page, to_page) {
   } else if ( to_page === 'contact' ) {
     newPage = `<%= render 'shared/contact_page' %>`;
     from_pageHTML = fullPage;
-    navbar.style.opacity = fadeOutIndex - 0.5;
-    navbar.style.zIndex = 0;
+
+    navbars.forEach(function(navbar){
+      navbar.style.opacity = fadeOutIndex - 0.5;
+      navbar.style.zIndex = 0;
+    });
+
     circleArrowDown.style.opacity = fadeOutIndex - 0.5;
     circleArrowUp.style.opacity = fadeOutIndex - 0.5;
     arrowTop.style.opacity = fadeOutIndex - 0.5;
@@ -139,8 +151,12 @@ function display(from_page, to_page) {
   to_page.style.opacity = displayIndex;
 
   if ( to_page === fullPage ) {
-     navbar.style.zIndex = 9;
-    navbar.style.opacity = displayIndex;
+
+    navbars.forEach(function(navbar){
+      navbar.style.zIndex = 9;
+      navbar.style.opacity = displayIndex;
+    });
+
     circleArrowDown.style.opacity = displayIndex;
     circleArrowUp.style.opacity = displayIndex;
     arrowTop.style.opacity = displayIndex;
@@ -167,9 +183,18 @@ function display(from_page, to_page) {
   }
 }
 
-agencyButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'agency')});
-projectsButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'listProjects')});
-contactButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'contact')});
+
+agencyButtons.forEach(function(agencyButton) {
+  agencyButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'agency')});
+})
+
+projectsButtons.forEach(function(projectsButton) {
+  projectsButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'listProjects')});
+})
+
+contactButtons.forEach(function(contactButton) {
+  contactButton.addEventListener('click', function(){defFadeOutInterval(fullPage, 'contact')});
+})
 
 
 </script>
