@@ -137,12 +137,6 @@
   .image-active {
     height: 20vh;
   };
-}
-
-@media screen and (max-width: 360px) {
-  #logo {
-    width: 285px
-  };
   .text-container {
     padding: 0;
     h3 {
@@ -155,5 +149,11 @@
       font-size: 11px;
     }
   }
+}
+
+@media screen and (max-width: 360px) {
+  #logo {
+    width: 285px
+  };
 }
 

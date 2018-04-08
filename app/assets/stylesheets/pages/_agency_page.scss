@@ -40,14 +40,24 @@
   .container-agency {
     font-size: 2.2vh;
   };
+  .agency-intro {
+    margin-top: 20vh;
+  };
+  .container-agency {
+    font-size: 4vh;
+    overflow: scroll;
+  };
 };
 
 @media screen and (max-width: 400px) {
+  .agency-intro {
+    margin-top: 25vh;
+  }
   .logo-agency-page {
     width: 150px;
   };
   .container-agency {
-    font-size: 2.6vh;
+    font-size: 3vh;
     overflow: scroll;
   };
 };
