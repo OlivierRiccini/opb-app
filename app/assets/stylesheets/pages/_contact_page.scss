@@ -29,3 +29,13 @@
   display: flex;
   flex-direction: column;
 }
+
+
+@media screen and (max-width: 800px) {
+  .logo-contact-page {
+    width: 150px;
+  };
+  .container-contact {
+    font-size: 3vh;
+  }
+};

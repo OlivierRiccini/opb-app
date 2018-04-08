@@ -18,3 +18,7 @@ import 'shared/_arrows-up-and-down';
 
 import 'fullpage.js';
 // import 'motion-ui';
+
+$('#icon-dropdown').click(function(){
+    $('#list-dropdown').slideToggle();
+});
