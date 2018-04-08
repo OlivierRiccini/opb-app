@@ -21,3 +21,12 @@
 .agency-intro {
   width: 50%;
 }
+
+@media screen and (max-width: 800px) {
+  .logo-agency-page {
+    width: 150px;
+  };
+  .container-agency {
+    font-size: 3vh;
+  }
+};

@@ -7,11 +7,107 @@
   }
 }
 
+// .images-container {
+//   z-index: 9;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .image-active {
+//   margin: 0 auto;
+// }
+
+// .images-mozaic {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .mySlides {
+//   display:none
+// }
+
+// .demo {
+//   cursor:pointer
+// }
+
+
+
+
+
+
+.projects-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.projects-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title-project {
+  margin-top: 0;
+}
+
+.text-container {
+  h3 {
+    font-size: 22px;
+  };
+  h5 {
+    font-size: 14px;
+  };
+  p {
+    font-size: 13px;
+  }
+}
+
+.logo-projects-section {
+  position: fixed;
+  top: 0;
+}
+
+.project-presentation {
+  padding: 0 140px;
+}
+
+.image-active {
+  height: 50vh;
+  text-align: center;
+  img {
+    max-height: -webkit-fill-available;
+  }
+}
+
+.images-mozaic {
+  padding: 20px 15px;
+  img {
+    height: 100px;
+  }
+}
+
+.image-mozaic-box {
+  margin: 5px;
+  padding: 0;
+  &:hover {
+    opacity: 0.6;
+    cursor:pointer;
+  }
+}
+
 .images-container {
   z-index: 9;
   text-align: center;
   display: flex;
   flex-direction: column;
+  .images {
+  display:none;
+  }
 }
 
 .image-active {
@@ -19,14 +115,73 @@
 }
 
 .images-mozaic {
+  float: left;
+}
+
+.fp-tableCell {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
-.mySlides {
-  display:none
+@media screen and (max-width: 800px) {
+  .logo-index-page {
+    width: 150px;
+  };
+  .arrow-top-0 {
+    bottom: 0;
+    left: 0px;
+  };
+  .project-presentation {
+    padding: 0 10px;
+    text-align: center;
+  };
+  .images-container {
+    margin-bottom: 10px;
+  };
+  .image-active {
+    height: 25vh;
+    text-align: center;
+  };
+  .images-mozaic {
+    padding-top: 0;
+    margin-left: 10px;
+    overflow: scroll;
+    img {
+      height: 12vh;
+    }
+  };
+  .text-container {
+  h3 {
+    font-size: 20px;
+  };
+  h5 {
+    font-size: 12px;
+  };
+  p {
+    font-size: 11px;
+  }
+}
 }
 
-.demo {
-  cursor:pointer
+
+@media screen and (max-width: 670px) {
+  .logo-index-page {
+    display: none !important;
+  };
+  .arrow-up-circle {
+    left: 15px;
+  };
 }
+
+@media screen and (max-width: 570px) {
+  .image-active {
+    height: 20vh;
+  };
+}
+
+@media screen and (max-width: 360px) {
+  #logo {
+    width: 285px
+  }
+}
+

@@ -25,3 +25,12 @@
   top: 0;
   left: 0;
 }
+
+@media screen and (max-width: 800px) {
+  .logo-list-projects {
+    width: 150px;
+  };
+  .container-list-projects {
+    font-size: 3vh;
+  }
+};
