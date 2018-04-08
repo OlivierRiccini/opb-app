@@ -22,3 +22,9 @@ import 'fullpage.js';
 $('#icon-dropdown').click(function(){
     $('#list-dropdown').slideToggle();
 });
+
+$(document).ready(function() {
+  setTimeout(function() {
+    $('.flash').slideUp()
+  }, 10000)
+})

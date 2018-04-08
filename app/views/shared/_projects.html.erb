@@ -34,33 +34,33 @@
           </div>
         </div>
 
-        <script>
-        var slideIndex = 1;
-        showDivs(slideIndex, <%= i %>);
+          <script>
+          var slideIndex = 1;
+          showDivs(slideIndex, <%= i %>);
 
-        function plusDivs(n, index_project) {
-          showDivs(slideIndex += n, index_project);
-        }
-
-        function currentDiv(n, index_project) {
-          showDivs(slideIndex = n, index_project);
-        }
-
-        function showDivs(n, index_project) {
-          var i;
-          var x = document.getElementsByClassName(`mySlides${index_project}`);
-          var dots = document.getElementsByClassName(`demo${index_project}`);
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+          function plusDivs(n, index_project) {
+            showDivs(slideIndex += n, index_project);
           }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+
+          function currentDiv(n, index_project) {
+            showDivs(slideIndex = n, index_project);
           }
-          x[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " w3-opacity-off";
-        }
+
+          function showDivs(n, index_project) {
+            var i;
+            var x = document.getElementsByClassName(`mySlides${index_project}`);
+            var dots = document.getElementsByClassName(`demo${index_project}`);
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+            x[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " w3-opacity-off";
+          }
         </script>
       </div>
     <% end %>

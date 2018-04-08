@@ -1,8 +1,17 @@
+<a href="/" class="close-button"></a>
+<%= image_tag("LOGO-FINAL-01.png", :alt => "logo-opb", width: 250, class: 'logo-list-projects') %>
 <div class="container-message">
-  <%= simple_form_for @new_message, remote: true do |f| %>
+  <%= simple_form_for @new_message do |f| %>
+    <%= f.error_notification %>
     <%= f.input :from_email_address, label: 'Adresse email' %><%= f.input :from_tel, label: 'Télephone' %>
     <%= f.input :subject, label: 'Object' %>
     <%= f.input :message %>
     <%= f.button :submit, value: 'Envoyer' %>
   <% end %>
 </div>
+
+<script>
+  $('#envoyer-message').click(function() {
+    alert('Merci pour votre message!');
+  });
+</script>

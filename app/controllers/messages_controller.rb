@@ -17,15 +17,17 @@ class MessagesController < ApplicationController
     authorize @new_message
 
     if @new_message.save
-      respond_to do |format|
-        format.html { redirect_to new_message_path }
-        format.js  # <-- will render `app/views/new_messages/create.js.erb`
-      end
+      # respond_to do |format|
+      #   format.html { redirect_to root_path }
+      #   format.js # <-- will render `app/views/new_messages/create.js.erb`
+      # end
+      flash[:success] = "Merci pour votre message,
+                         nous vous contacterons dès
+                         que possible!"
+
+      redirect_to root_path
     else
-      respond_to do |format|
-        format.html { render new_message_path }
-        format.js  # <-- idem
-      end
+      render new_message_path
     end
   end
 
