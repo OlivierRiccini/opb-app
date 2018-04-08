@@ -105,6 +105,7 @@
   };
   .project-presentation {
     padding: 0 10px;
+    width: 100vw;
     text-align: center;
   };
   .images-container {
@@ -116,7 +117,6 @@
   };
   .images-mozaic {
     padding-top: 0;
-    margin-left: 10px;
     overflow: scroll;
     img {
       height: 12vh;
