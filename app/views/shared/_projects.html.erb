@@ -2,7 +2,7 @@
   <% @projects.each do |project| %>
   <% i += 1 %>
     <div class="projects-container section" data-index-section="<%= i %>">
-      <div class="row project-presentation project<%= i %>">
+      <div class="row project-presentation project-section project<%= i %>">
           <% if project.images.first.nil? %>
             <div class="col-xs-12 col-sm-6 images-container">
               <div class="image-active" >
@@ -18,12 +18,10 @@
             </div>
           <% end %>
           <div class="col-xs-12 col-md-6 text-container animateText<%= i %>">
-            <div class="only-text">
-              <h3 class="title-project"><%= project.title %></h3>
-                <h5 class="description-project"><%= project.description %></h5>
-                <p class="type_1-project"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
-              <p class="content-project"><%= project.content %></p>
-            </div>
+            <h3 class="title-project"><%= project.title %></h3>
+            <h5 class="description-project"><%= project.description %></h5>
+            <p class="type_1-project"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
+            <p class="content-project"><%= project.content %></p>
           <div class="images-mozaic row animateMozaic<%= i %>">
             <% index_image_section = 0 %>
               <% project.images.each do |image| %>
