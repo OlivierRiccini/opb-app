@@ -2,14 +2,14 @@
   <% @projects.each do |project| %>
   <% i += 1 %>
     <div class="projects-container section" data-index-section="<%= i %>">
-      <div class="row project-presentation">
+      <div class="row project-presentation project<%= i %>">
           <% if project.images.first.nil? %>
             <div class="col-xs-12 col-sm-6 images-container">
               <div class="image-active" >
                 <p>Sorry no pictures</p>
               </div>
           <% else %>
-            <div class="col-xs-12 col-md-6 images-container">
+            <div class="col-xs-12 col-md-6 images-container animateImage<%= i %>">
               <div class="image-active w3-">
                 <% project.images.each do |image| %>
                   <%= cl_image_tag image.url, class: "mySlides#{i} images" %>
@@ -17,12 +17,14 @@
               </div>
             </div>
           <% end %>
-          <div class="col-xs-12 col-md-6 text-container">
-            <h3 class="title-project text-animate"><%= project.title %></h3>
-            <h5 class="description-project text-animate"><%= project.description %></h5>
-            <p class="type_1-project text-animate"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
-            <p class="content-project text-animate"><%= project.content %></p>
-          <div class="images-mozaic row">
+          <div class="col-xs-12 col-md-6 text-container animateText<%= i %>">
+            <div class="only-text">
+              <h3 class="title-project"><%= project.title %></h3>
+                <h5 class="description-project"><%= project.description %></h5>
+                <p class="type_1-project"><strong><%= project.type_1 %> - <%= project.type_2 %></strong></p>
+              <p class="content-project"><%= project.content %></p>
+            </div>
+          <div class="images-mozaic row animateMozaic<%= i %>">
             <% index_image_section = 0 %>
               <% project.images.each do |image| %>
                 <% index_image_section += 1 %>

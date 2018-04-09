@@ -20,8 +20,23 @@ $(document).ready(function() {
       } else {
         $('.arrow-down-circle').fadeIn();
       }
+
+      $(`.project${this[0].dataset.indexSection}`).css('display', 'block');
+
+      $(`.animateImage${this[0].dataset.indexSection}`).addClass('animate-reveal animate-first');
+      $(`.animateText${this[0].dataset.indexSection}`).addClass('animate-reveal animate-second');
+      $(`.animateMozaic${this[0].dataset.indexSection}`).addClass('animate-reveal animate-third');
+    },
+
+    onLeave: function () {
+       $(`.project${this[0].dataset.indexSection}`).fadeOut();
+
+      $(`.animateImage${this[0].dataset.indexSection}`).removeClass('animate-reveal animate-first');
+      $(`.animateText${this[0].dataset.indexSection}`).removeClass('animate-reveal animate-second');
+      $(`.animateMozaic${this[0].dataset.indexSection}`).removeClass('animate-reveal animate-third');
     }
   });
+
 });
 
 /* Arrow to top 0 */
