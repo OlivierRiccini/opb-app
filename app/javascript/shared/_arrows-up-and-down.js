@@ -29,7 +29,7 @@ $(document).ready(function() {
     },
 
     onLeave: function () {
-       $(`.project${this[0].dataset.indexSection}`).fadeOut();
+      $(`.project${this[0].dataset.indexSection}`).fadeOut();
 
       $(`.animateImage${this[0].dataset.indexSection}`).removeClass('animate-reveal animate-first');
       $(`.animateText${this[0].dataset.indexSection}`).removeClass('animate-reveal animate-second');

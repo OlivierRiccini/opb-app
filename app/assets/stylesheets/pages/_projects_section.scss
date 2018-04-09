@@ -4,7 +4,6 @@
   width: 100vw;
 }
 
-
 .projects-container {
   position: relative;
   display: flex;
@@ -34,8 +33,11 @@
   top: 0;
 }
 
-.project-presentation {
+.project-section {
   display: none;
+}
+
+.project-presentation {
   padding: 0 140px;
   width: 100%;
   margin: 0;
@@ -135,26 +137,14 @@
 }
 
 @media screen and (max-width: 570px) {
-  .image-active {
-    height: 20vh;
-  };
-  .text-container {
-    padding: 0;
-    h3 {
-      font-size: 20px;
-    };
-    h5 {
-      font-size: 12px;
-    };
-    p {
-      font-size: 11px;
-    }
-  }
-}
-
-@media screen and (max-width: 360px) {
   #logo {
-    width: 285px
+    width: 300px;
   };
+  .image-active {
+    height: 32vh;
+  };
+  .content-project {
+    display: none;
+  }
 }
 
