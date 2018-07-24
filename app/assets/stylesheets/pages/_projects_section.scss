@@ -46,7 +46,7 @@
 .image-active {
   height: 50vh;
   text-align: center;
-  overflow: scroll;
+  // overflow: scroll;
   width: 100%;
   img {
     max-height: -webkit-fill-available;
@@ -55,7 +55,7 @@
 
 .images-mozaic {
   padding: 20px 15px;
-  overflow: scroll;
+  // overflow: scroll;
   width: 100%;
   img {
     height: 100px;
